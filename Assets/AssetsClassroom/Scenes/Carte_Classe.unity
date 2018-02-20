@@ -342,7 +342,7 @@ GameObject:
   - component: {fileID: 142144993}
   - component: {fileID: 142144995}
   - component: {fileID: 142144994}
-  m_Layer: 1
+  m_Layer: 0
   m_Name: Tilemap_Perso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1169,7 +1169,7 @@ GameObject:
   - component: {fileID: 559249596}
   - component: {fileID: 559249595}
   - component: {fileID: 559249597}
-  m_Layer: 1
+  m_Layer: 0
   m_Name: Personnage
   m_TagString: Player
   m_Icon: {fileID: 0}
