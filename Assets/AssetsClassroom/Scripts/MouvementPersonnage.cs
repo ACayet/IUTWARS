@@ -16,6 +16,7 @@ public class MouvementPersonnage : MonoBehaviour {
         if (Input.GetKey(KeyCode.Q) && transform.position == pos){        // Left
             pos += Vector3.left;
             //GetComponent<Animator>().SetTrigger("StandLeft");
+            
             GetComponent<Animator>().SetTrigger("WalkLeft");
         }
         if (Input.GetKey(KeyCode.D) && transform.position == pos){        // Right
