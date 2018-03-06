@@ -15,24 +15,23 @@ public class MouvementPersonnage : MonoBehaviour {
 	void Update () {
         if (Input.GetKey(KeyCode.Q) && transform.position == pos){        // Left
             pos += Vector3.left;
-            //GetComponent<Animator>().SetTrigger("StandLeft");
-            
-            GetComponent<Animator>().SetTrigger("WalkLeft");
+            GetComponent<Animator>().Play("WalkingLeft");
+           //GetComponent<Animator>().Play("StandingLeft");
         }
         if (Input.GetKey(KeyCode.D) && transform.position == pos){        // Right
             pos += Vector3.right;
-            //GetComponent<Animator>().SetTrigger("StandRight");
-            GetComponent<Animator>().SetTrigger("WalkRight");
+            GetComponent<Animator>().Play("WalkingRight");
+            //GetComponent<Animator>().Play("StandingRight");
         }
         if (Input.GetKey(KeyCode.Z) && transform.position == pos){        // Up
             pos += Vector3.up;
-            //GetComponent<Animator>().SetTrigger("StandUp");
-            GetComponent<Animator>().SetTrigger("WalkUp");
+            GetComponent<Animator>().Play("WalkingUp");
+            //GetComponent<Animator>().Play("StandingUp");
         }
         if (Input.GetKey(KeyCode.S) && transform.position == pos){        // Down
             pos += Vector3.down;
-            //GetComponent<Animator>().SetTrigger("StandDown");
-            GetComponent<Animator>().SetTrigger("WalkDown");
+            GetComponent<Animator>().Play("WalkingDown");
+            //GetComponent<Animator>().Play("StandingDown");
         }
         transform.position = Vector3.MoveTowards(transform.position, pos, Time.deltaTime * speed);    // Move there
     }
