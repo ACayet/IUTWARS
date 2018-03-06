@@ -2,19 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MouvementPersonnage : MonoBehaviour {
     Vector3 pos;                                // For movement
     float speed = 2.0f;                         // Speed of movement
 
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         pos = transform.position; // Take the initial position
     }
-	
-	// Update is called once per frame
-	void Update () {
         if (Input.GetKey(KeyCode.Q) && transform.position == pos){        // Left
             pos += Vector3.left;
+<<<<<<< HEAD
             GetComponent<Animator>().Play("WalkingLeft");
            //GetComponent<Animator>().Play("StandingLeft");
         }
@@ -32,6 +30,8 @@ public class MouvementPersonnage : MonoBehaviour {
             pos += Vector3.down;
             GetComponent<Animator>().Play("WalkingDown");
             //GetComponent<Animator>().Play("StandingDown");
+=======
+>>>>>>> 3d330fdf75648db393a333192e4c4b849ea55fb1
         }
         transform.position = Vector3.MoveTowards(transform.position, pos, Time.deltaTime * speed);    // Move there
     }
