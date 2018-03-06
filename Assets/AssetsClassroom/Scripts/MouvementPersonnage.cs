@@ -23,7 +23,7 @@ public class MouvementPersonnage : Character {
     void Update () {
         if (Input.GetKey(KeyCode.Q) && transform.position == pos){        // Left
             pos += Vector3.left;
-<<<<<<< HEAD
+
             GetComponent<Animator>().Play("WalkingLeft");
            //GetComponent<Animator>().Play("StandingLeft");
         }
@@ -41,7 +41,7 @@ public class MouvementPersonnage : Character {
             pos += Vector3.down;
             GetComponent<Animator>().Play("WalkingDown");
             //GetComponent<Animator>().Play("StandingDown");
-=======
+
             //GetComponent<Animator>().SetTrigger("StandLeft");
             
             GetComponent<Animator>().SetTrigger("WalkLeft");
@@ -80,7 +80,6 @@ public class MouvementPersonnage : Character {
                 print("T'es mort Jack");
             }
             PM = PM - 1;
->>>>>>> 3d330fdf75648db393a333192e4c4b849ea55fb1
         }
         transform.position = Vector3.MoveTowards(transform.position, pos, Time.deltaTime * speed);    // Move there
         if (Input.GetKey(KeyCode.Space) && transform.position == pos)
