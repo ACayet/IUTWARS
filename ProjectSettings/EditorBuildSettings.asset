@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/AssetsClassroom/Scenes/Carte_Classe.unity
     guid: 3007f502b711548459e867bad81fdea9
+  - enabled: 1
+    path: Assets/AssetsClassroom/Scenes/TestFight.unity
+    guid: 8f6667672a7686643a590234501c5319
