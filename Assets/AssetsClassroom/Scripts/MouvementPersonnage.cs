@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,7 +9,7 @@ public class MouvementPersonnage : Character {
     int HPPlayer = 100;
     int AttackPlayer = 10;
     int DefensePlayer = 0;
-    int portéePlayer = 1;
+    int portéePlayer = 2;
     int PMPlayer = 3;
     int PAPlayer = 2;
 
@@ -21,6 +22,8 @@ public class MouvementPersonnage : Character {
 
     // Update is called once per frame
     void Update () {
+        int tester = targetNumber(2);
+        print(tester);
         if (Input.GetKey(KeyCode.Q) && transform.position == posPlayer)
         {        // Left
             posPlayer += Vector3.left;
@@ -91,10 +94,12 @@ public class MouvementPersonnage : Character {
         transform.position = Vector3.MoveTowards(transform.position, posPlayer, Time.deltaTime * speedPlayer);    // Move there
         if (Input.GetKey(KeyCode.Space) && transform.position == posPlayer)
         {
-            
-            GameObject Target = GameObject.Find("Target");
+
+            // GameObject Target = GameObject.Find("Target");
             /*Target.GetComponent<Ennemy>().getDamaged(Attack);*/
-            AttackTarget(Target);
+            GameObject[] Targets = whoCanIAttack();
+            AttackTarget(Targets[0]);
+            //AttackTarget(Target);
             //if (PA <= 0)
             //{
             //    print("T'es faible Jack");
@@ -106,7 +111,10 @@ public class MouvementPersonnage : Character {
 
     void AttackTarget(GameObject theTarget)
     {
-        if (isThereAnEnnemyToAttack()) { print("JOHN CENA"); theTarget.GetComponent<Ennemy>().getDamaged(AttackPlayer); };
+        if (isThereAnEnnemyToAttack()) { print("JOHN CENA"); theTarget.GetComponent<Ennemy>().getDamaged(AttackPlayer); 
+            
+            
+        };
         
     }
 
@@ -119,6 +127,7 @@ public class MouvementPersonnage : Character {
         {
             if ((Vector3.Distance(ob.GetComponent<Ennemy>().getPos(), posPlayer) <= portéePlayer)){
                 possibleTargets[nbTargets] = ob;
+                nbTargets++;
             }
         }
         return possibleTargets;
@@ -141,9 +150,10 @@ public class MouvementPersonnage : Character {
     public int targetNumber(int range)
     {
         int targetNb = 0;
-        for(int i = 1; i == range; i++)
+        for(int i = 1; i <= range; i++)
         {
-            targetNb = targetNb + i * 4;
+            targetNb = targetNb + (i * 4);
+            print(targetNb);
         }
         return targetNb;
     }

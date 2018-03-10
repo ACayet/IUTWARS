@@ -24,6 +24,9 @@ public class Ennemy : Character {
             //GetComponent<Animator>().SetTrigger("StandDown");
             GetComponent<Animator>().SetTrigger("WalkDown");
             transform.position = Vector3.MoveTowards(transform.position, posEnnemy, Time.deltaTime * speedEnnemy);
+            
+            //Destroy(this);
+            
         }
     }
 
