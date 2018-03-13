@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class GestionSon : MonoBehaviour
 {
-    public Object objet;
     void Awake()
     {
-        DontDestroyOnLoad(objet);
+        DontDestroyOnLoad(this);
     }
 }
