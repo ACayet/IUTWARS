@@ -1,18 +1,18 @@
 fileFormatVersion: 2
-guid: fd8542224b0a2574f88443e377128332
-timeCreated: 1519574415
+guid: 828961382c99ed241b48e7f7115309de
+timeCreated: 1520333298
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: ui-spritesheet_0
-    21300002: ui-spritesheet_1
-    21300004: ui-spritesheet_2
-    21300006: ui-spritesheet_3
-    21300008: ui-spritesheet_4
-    21300010: ui-spritesheet_5
-    21300012: ui-spritesheet_6
-    21300014: ui-spritesheet_7
-    21300016: ui-spritesheet_8
+    21300000: ui-spritesheet2_0
+    21300002: ui-spritesheet2_1
+    21300004: ui-spritesheet2_2
+    21300006: ui-spritesheet2_3
+    21300008: ui-spritesheet2_4
+    21300010: ui-spritesheet2_5
+    21300012: ui-spritesheet2_6
+    21300014: ui-spritesheet2_7
+    21300016: ui-spritesheet2_8
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -139,7 +139,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ui-spritesheet_0
+      name: ui-spritesheet2_0
       rect:
         serializedVersion: 2
         x: 4
@@ -153,7 +153,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ui-spritesheet_1
+      name: ui-spritesheet2_1
       rect:
         serializedVersion: 2
         x: 169
@@ -167,7 +167,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ui-spritesheet_2
+      name: ui-spritesheet2_2
       rect:
         serializedVersion: 2
         x: 333
@@ -181,7 +181,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ui-spritesheet_3
+      name: ui-spritesheet2_3
       rect:
         serializedVersion: 2
         x: 333
@@ -195,12 +195,12 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ui-spritesheet_4
+      name: ui-spritesheet2_4
       rect:
         serializedVersion: 2
-        x: 331
-        y: 202
-        width: 266
+        x: 337
+        y: 198
+        width: 239
         height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -209,7 +209,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ui-spritesheet_5
+      name: ui-spritesheet2_5
       rect:
         serializedVersion: 2
         x: 22
@@ -223,7 +223,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ui-spritesheet_6
+      name: ui-spritesheet2_6
       rect:
         serializedVersion: 2
         x: 330
@@ -237,7 +237,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ui-spritesheet_7
+      name: ui-spritesheet2_7
       rect:
         serializedVersion: 2
         x: 558
@@ -251,7 +251,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: ui-spritesheet_8
+      name: ui-spritesheet2_8
       rect:
         serializedVersion: 2
         x: 332
