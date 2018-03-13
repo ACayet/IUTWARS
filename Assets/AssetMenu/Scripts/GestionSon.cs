@@ -2,22 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GestionSon : MonoBehaviour {
-
-    private static GestionSon instance = null;
-    public static GestionSon Instance
-    {
-        get { return instance; }
-    }
+public class GestionSon : MonoBehaviour
+{
+    public Object objet;
     void Awake()
     {
-        if (instance != null && instance != this) {
-            Destroy(this.gameObject);
-            return;
-        } 
-        else {  
-            instance = this;
-        }
-        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(objet);
     }
 }
