@@ -39,7 +39,7 @@ public class BarScriptPA : MonoBehaviour {
     {
 
         pourcentage = PA / maxPA; //pourcentage des pm
-        Debug.Log(pourcentage);
+        //Debug.Log(pourcentage);
         fillAmount = pourcentage * (1 - minFill) + minFill; //
         content.fillAmount = fillAmount;
     }

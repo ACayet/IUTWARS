@@ -6,20 +6,32 @@ using UnityEngine;
 public class MouvementPersonnage : Character
 {
     Vector3 posPlayer;                                // For movement
-    float speedPlayer = 2.0f;                         // Speed of movement
-    int HPPlayer = 100;
-    int AttackPlayer = 10;
-    int DefensePlayer = 0;
-    int portéePlayer = 2;
-    int PMPlayer = 3;
-    int PAPlayer = 2;
-    bool isSelected = false;
+    float speedPlayer;                         // Speed of movement
+    int HPPlayer;
+    int AttackPlayer;
+    int DefensePlayer;
+    int portéePlayer;
+    int PMPlayer;
+    int PAPlayer;
+    bool isSelected;
     
     // Use this for initialization
     void Start()
     {
         posPlayer = transform.position; // Take the initial position
+        speedPlayer = 2.0f;                         // Speed of movement
+        HPPlayer = 100;
+        AttackPlayer = 10;
+        DefensePlayer = 0;
+        portéePlayer = 2;
+        PMPlayer = 3;
+        PAPlayer = 2;
+        isSelected = false;
+    }
 
+    public Vector3 getPosPlayer()
+    {
+        return posPlayer;
     }
 
     public void setSelected(bool b)

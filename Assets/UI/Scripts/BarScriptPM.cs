@@ -38,7 +38,7 @@ public class BarScriptPM : MonoBehaviour
     {
 
         pourcentage = PM / maxPM; //pourcentage des pm
-        Debug.Log(pourcentage);
+        //Debug.Log(pourcentage);
         fillAmount = pourcentage * (1 - minFill) + minFill; //
         content.fillAmount = fillAmount;
     }

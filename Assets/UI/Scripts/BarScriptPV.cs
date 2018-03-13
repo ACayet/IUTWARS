@@ -42,7 +42,7 @@ public class BarScriptPV : MonoBehaviour {
     {
         
         pourcentage = PV / maxPV; //pourcentage des pvs
-        Debug.Log(pourcentage);
+        //Debug.Log(pourcentage);
        fillAmount = pourcentage*(1-minFill)+minFill; //
         
         if (pourcentage > 0.5)

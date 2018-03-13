@@ -5,13 +5,18 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
-	public void PlayNewGame()
+    DataController data = new DataController();
+
+    public void PlayNewGame()
     {
+        data.SaveGameData();
         SceneManager.LoadScene(1);
     }
 
     public void ContinuGame()
     {
+        DataController data = new DataController();
+        data.LoadGameData();
         SceneManager.LoadScene(2);//à adapter
     }
 

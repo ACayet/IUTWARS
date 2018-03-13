@@ -6,6 +6,6 @@ public class GestionSon : MonoBehaviour
 {
     void Awake()
     {
-        DontDestroyOnLoad(this);
+        DontDestroyOnLoad(gameObject);
     }
 }
