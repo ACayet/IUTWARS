@@ -32,7 +32,7 @@ public class ClickManager : MonoBehaviour
             if (hit.collider != null)
             {
                 Debug.Log("Something with the tag " + hit.collider.tag + " was clicked! at " + mousePos.x + " " + mousePos.y);
-                hit.collider.attachedRigidbody.AddForce(Vector2.up);
+                //hit.collider.attachedRigidbody.AddForce(Vector2.up);
                 currentClicked = hit.collider.gameObject;
                 Debug.Log(currentClicked.tag);
                 //currentClicked.GetComponent<Ennemy>().getDamaged(currentHero.GetComponent<MouvementPersonnage>().getAttack());
