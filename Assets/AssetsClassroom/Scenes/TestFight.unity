@@ -158,6 +158,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7316621abd0310e478c0739d44aee908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HPPlayer: 0
+  AttackPlayer: 0
+  DefensePlayer: 0
+  "port\xE9ePlayer": 0
+  PMPlayer: 0
+  PAPlayer: 0
 --- !u!212 &75001093
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -230,6 +236,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d543710b818b0149a75c9533725d22a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HPEnnemy: 100
+  AttackEnnemy: 10
+  DefenseEnnemy: 0
 --- !u!61 &75001096
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -253,7 +262,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 0.4, y: 0.4}
   m_EdgeRadius: 0
 --- !u!50 &75001097
 Rigidbody2D:
@@ -1819,6 +1828,7 @@ GameObject:
   - component: {fileID: 1706664928}
   - component: {fileID: 1706664931}
   - component: {fileID: 1706664932}
+  - component: {fileID: 1706664933}
   m_Layer: 0
   m_Name: Personnage
   m_TagString: Player
@@ -1850,6 +1860,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7316621abd0310e478c0739d44aee908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HPPlayer: 0
+  AttackPlayer: 0
+  DefensePlayer: 0
+  "port\xE9ePlayer": 0
+  PMPlayer: 0
+  PAPlayer: 0
 --- !u!212 &1706664929
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1934,7 +1950,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 0.4, y: 0.4}
   m_EdgeRadius: 0
 --- !u!50 &1706664932
 Rigidbody2D:
@@ -1956,6 +1972,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1706664933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1706664926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64f4a952d5f4b7f4eb2f944ff4a15322, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1719833949
 GameObject:
   m_ObjectHideFlags: 0
@@ -2001,6 +2028,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d543710b818b0149a75c9533725d22a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HPEnnemy: 100
+  AttackEnnemy: 10
+  DefenseEnnemy: 0
 --- !u!114 &1719833952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2012,6 +2042,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7316621abd0310e478c0739d44aee908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HPPlayer: 0
+  AttackPlayer: 0
+  DefensePlayer: 0
+  "port\xE9ePlayer": 0
+  PMPlayer: 0
+  PAPlayer: 0
 --- !u!212 &1719833953
 SpriteRenderer:
   m_ObjectHideFlags: 0
