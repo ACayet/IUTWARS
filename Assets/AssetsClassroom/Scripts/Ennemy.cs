@@ -6,9 +6,9 @@ public class Ennemy : Character {
 
     Vector3 posEnnemy;                                // For movement
     float speedEnnemy = 2.0f;                         // Speed of movement
-    int HPEnnemy = 100;
-    int AttackEnnemy = 10;
-    int DefenseEnnemy = 0;
+    public int HPEnnemy = 100;
+    public int AttackEnnemy = 10;
+    public int DefenseEnnemy = 0;
 
     // Use this for initialization
     void Start () {

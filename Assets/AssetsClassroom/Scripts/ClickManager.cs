@@ -7,6 +7,7 @@ public class ClickManager : MonoBehaviour {
     GameObject currentClicked = null;
     GameObject[] ennemies = null;
     GameObject[] heroes = null;
+    GameObject currentHero = null;
 
 	// Use this for initialization
 	void Start () {
@@ -31,7 +32,15 @@ public class ClickManager : MonoBehaviour {
                 hit.collider.attachedRigidbody.AddForce(Vector2.up);
                 currentClicked = hit.collider.gameObject;
                 Debug.Log(currentClicked.tag);
-                
+                //currentClicked.GetComponent<Ennemy>().getDamaged(currentHero.GetComponent<MouvementPersonnage>().getAttack());
+                if (hit.collider.tag == "Ennemy")
+                {
+                    currentHero.GetComponent<MouvementPersonnage>().AttackTarget(currentClicked);
+                }
+                if (hit.collider.tag == "Player")
+                {
+                    changeSelected(hit.collider.gameObject);
+                }
             }
         }
     }
@@ -43,5 +52,6 @@ public class ClickManager : MonoBehaviour {
             ob.GetComponent<MouvementPersonnage>().setSelected(false);
         }
         Hero.GetComponent<MouvementPersonnage>().setSelected(true);
+        currentHero = Hero;
     }
 }
