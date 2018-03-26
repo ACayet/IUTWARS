@@ -2114,10 +2114,10 @@ GameObject:
   - component: {fileID: 1706664927}
   - component: {fileID: 1706664930}
   - component: {fileID: 1706664929}
+  - component: {fileID: 1706664933}
   - component: {fileID: 1706664928}
   - component: {fileID: 1706664931}
   - component: {fileID: 1706664932}
-  - component: {fileID: 1706664933}
   m_Layer: 0
   m_Name: Personnage
   m_TagString: Player
@@ -2153,7 +2153,7 @@ MonoBehaviour:
   AttackPlayer: 10
   DefensePlayer: 0
   "port\xE9ePlayer": 0
-  PMPlayer: 5
+  PMPlayer: 9
   PAPlayer: 0
 --- !u!212 &1706664929
 SpriteRenderer:
