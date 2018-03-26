@@ -14,18 +14,18 @@ public class MouvementPersonnage : Character
     public int PMPlayer;
     public int PAPlayer;
     bool isSelected;
-    
+
     // Use this for initialization
     void Start()
     {
         posPlayer = transform.position; // Take the initial position
         speedPlayer = 2.0f;                         // Speed of movement
-       /* HPPlayer = 100;
-        AttackPlayer = 10;
-        DefensePlayer = 0;
-        portéePlayer = 2;
-        PMPlayer = 3;
-        PAPlayer = 2; */
+                                                    /* HPPlayer = 100;
+                                                     AttackPlayer = 10;
+                                                     DefensePlayer = 0;
+                                                     portéePlayer = 2;
+                                                     PMPlayer = 3;
+                                                     PAPlayer = 2; */
         isSelected = false;
     }
 
@@ -122,18 +122,18 @@ public class MouvementPersonnage : Character
 
             // GameObject Target = GameObject.Find("Target");
             /*Target.GetComponent<Ennemy>().getDamaged(Attack);*/
-            //GameObject[] Targets = whoCanIAttack();
-            //AttackTarget(Targets[0]);
-            //AttackTarget(Target);
-            //if (PA <= 0)
-            //{
-            //    Debug.Log("T'es faible Jack");
-            //}
-            //PA = PA - 1;
+        //GameObject[] Targets = whoCanIAttack();
+        //AttackTarget(Targets[0]);
+        //AttackTarget(Target);
+        //if (PA <= 0)
+        //{
+        //    Debug.Log("T'es faible Jack");
+        //}
+        //PA = PA - 1;
 
         //}
 
-       
+
     }
 
     internal int getAttack()
@@ -145,10 +145,11 @@ public class MouvementPersonnage : Character
     {
         if (isThereAnEnnemyToAttack())
         {
-            if(canIAttackThis(theTarget, whoCanIAttack())) {
+            if (canIAttackThis(theTarget, whoCanIAttack()))
+            {
                 Debug.Log("JOHN CENA"); theTarget.GetComponent<Ennemy>().getDamaged(AttackPlayer);
             }
-            
+
 
 
         };
@@ -157,7 +158,7 @@ public class MouvementPersonnage : Character
 
     public bool canIAttackThis(GameObject clickedTarget, GameObject[] possibleTargets)
     {
-        foreach(GameObject ob in possibleTargets)
+        foreach (GameObject ob in possibleTargets)
         {
             if (ob == clickedTarget)
             {

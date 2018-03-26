@@ -2,25 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClickManager : MonoBehaviour {
+public class ClickManager : MonoBehaviour
+{
 
     GameObject currentClicked = null;
     GameObject[] ennemies = null;
     GameObject[] heroes = null;
     GameObject currentHero = null;
 
-	// Use this for initialization
-	void Start () {
-		heroes = GameObject.FindGameObjectsWithTag("Player");
+    // Use this for initialization
+    void Start()
+    {
+        heroes = GameObject.FindGameObjectsWithTag("Player");
         ennemies = GameObject.FindGameObjectsWithTag("Ennemy");
         changeSelected(heroes[0]);
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         if (Input.GetMouseButtonDown(0))
         {
-            
+
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
 
@@ -47,7 +50,7 @@ public class ClickManager : MonoBehaviour {
 
     void changeSelected(GameObject Hero)
     {
-        foreach(GameObject ob in heroes)
+        foreach (GameObject ob in heroes)
         {
             ob.GetComponent<MouvementPersonnage>().setSelected(false);
         }
