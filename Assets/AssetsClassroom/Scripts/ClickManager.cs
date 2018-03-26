@@ -21,6 +21,7 @@ public class ClickManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        currentHero.GetComponent<CombatJoueur>().getPositionOfPlayer(currentHero.GetComponent<MouvementPersonnage>().getPosPlayer());
         if (Input.GetMouseButtonDown(0))
         {
 
@@ -38,7 +39,8 @@ public class ClickManager : MonoBehaviour
                 //currentClicked.GetComponent<Ennemy>().getDamaged(currentHero.GetComponent<MouvementPersonnage>().getAttack());
                 if (hit.collider.tag == "Ennemy")
                 {
-                    currentHero.GetComponent<MouvementPersonnage>().AttackTarget(currentClicked);
+                    
+                    currentHero.GetComponent<CombatJoueur>().AttackTarget(currentClicked);
                 }
                 if (hit.collider.tag == "Player")
                 {

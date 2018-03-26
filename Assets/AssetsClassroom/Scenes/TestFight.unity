@@ -158,12 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7316621abd0310e478c0739d44aee908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HPPlayer: 0
-  AttackPlayer: 0
-  DefensePlayer: 0
-  "port\xE9ePlayer": 0
   PMPlayer: 0
-  PAPlayer: 0
 --- !u!212 &75001093
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -479,6 +474,7 @@ GameObject:
   - component: {fileID: 1211001608}
   - component: {fileID: 1211001607}
   - component: {fileID: 1211001606}
+  - component: {fileID: 1211001612}
   m_Layer: 0
   m_Name: Personnage
   m_TagString: Player
@@ -566,12 +562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7316621abd0310e478c0739d44aee908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HPPlayer: 0
-  AttackPlayer: 5
-  DefensePlayer: 0
-  "port\xE9ePlayer": 0
   PMPlayer: 10
-  PAPlayer: 0
 --- !u!212 &1211001610
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -633,6 +624,22 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &1211001612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1211001604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ee571d75ddbbd44fa93466b6710ddc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HPPlayer: 0
+  AttackPlayer: 10
+  DefensePlayer: 0
+  "port\xE9ePlayer": 2
+  PAPlayer: 0
 --- !u!1 &1237641013
 GameObject:
   m_ObjectHideFlags: 0
@@ -2118,6 +2125,7 @@ GameObject:
   - component: {fileID: 1706664928}
   - component: {fileID: 1706664931}
   - component: {fileID: 1706664932}
+  - component: {fileID: 1706664934}
   m_Layer: 0
   m_Name: Personnage
   m_TagString: Player
@@ -2149,12 +2157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7316621abd0310e478c0739d44aee908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HPPlayer: 0
-  AttackPlayer: 10
-  DefensePlayer: 0
-  "port\xE9ePlayer": 0
   PMPlayer: 9
-  PAPlayer: 0
 --- !u!212 &1706664929
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2272,6 +2275,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64f4a952d5f4b7f4eb2f944ff4a15322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1706664934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1706664926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ee571d75ddbbd44fa93466b6710ddc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HPPlayer: 0
+  AttackPlayer: 10
+  DefensePlayer: 0
+  "port\xE9ePlayer": 2
+  PAPlayer: 0
 --- !u!1 &1719833949
 GameObject:
   m_ObjectHideFlags: 0
@@ -2331,12 +2350,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7316621abd0310e478c0739d44aee908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HPPlayer: 0
-  AttackPlayer: 0
-  DefensePlayer: 0
-  "port\xE9ePlayer": 0
   PMPlayer: 0
-  PAPlayer: 0
 --- !u!212 &1719833953
 SpriteRenderer:
   m_ObjectHideFlags: 0
