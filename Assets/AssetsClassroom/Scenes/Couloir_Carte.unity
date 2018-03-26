@@ -164,10 +164,10 @@ GameObject:
   - component: {fileID: 323053070}
   - component: {fileID: 323053069}
   - component: {fileID: 323053068}
-  - component: {fileID: 323053067}
   - component: {fileID: 323053066}
   - component: {fileID: 323053065}
   - component: {fileID: 323053064}
+  - component: {fileID: 323053067}
   m_Layer: 0
   m_Name: Personnage
   m_TagString: Player
@@ -243,9 +243,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 323053063}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7316621abd0310e478c0739d44aee908, type: 3}
+  m_Script: {fileID: 11500000, guid: d0c17bf5003354447b20d5527b715643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HPPlayer: 0
+  AttackPlayer: 10
+  DefensePlayer: 0
+  "port\xE9ePlayer": 0
+  PMPlayer: 10
+  PAPlayer: 0
 --- !u!212 &323053068
 SpriteRenderer:
   m_ObjectHideFlags: 0
