@@ -19,13 +19,13 @@ public class MouvementPersonnage : Character
     void Start()
     {
         posPlayer = transform.position; // Take the initial position
-        speedPlayer = 2.0f;                         // Speed of movement
-                                                    /* HPPlayer = 100;
-                                                     AttackPlayer = 10;
-                                                     DefensePlayer = 0;
-                                                     portéePlayer = 2;
-                                                     PMPlayer = 3;
-                                                     PAPlayer = 2; */
+        speedPlayer = 2.0f;                        // Speed of movement
+                                                   /* HPPlayer = 100;
+                                                    AttackPlayer = 10;
+                                                    DefensePlayer = 0;
+                                                    portéePlayer = 2;
+                                                    PMPlayer = 3;
+                                                    PAPlayer = 2; */
         isSelected = false;
     }
 
@@ -37,11 +37,22 @@ public class MouvementPersonnage : Character
     public void setSelected(bool b)
     {
         isSelected = b;
+        if (PMPlayer < 0)
+        {
+            posPlayer = new Vector3(0.0f, 0.0f, 0.0f);
+            speedPlayer = 0.0f;
+        }
+        else
+        {
+            posPlayer = transform.position;
+            speedPlayer = 2.0f;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+      
         if (PMPlayer >= 0 && isSelected)
         {
             if (Input.GetKey(KeyCode.Q) && transform.position == posPlayer)
