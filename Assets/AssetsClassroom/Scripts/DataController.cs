@@ -61,15 +61,18 @@ public class DataController : MonoBehaviour
     public void LoadGameData()
     {
         string filePath = Application.dataPath + gameDataProjectFilePath;
-
-        if (File.Exists(filePath))
+        try
         {
-            string dataAsJson = File.ReadAllText(filePath);
-            data = JsonUtility.FromJson<GameData>(dataAsJson);
+            if (File.Exists(filePath))
+            {
+                string dataAsJson = File.ReadAllText(filePath);
+                data = JsonUtility.FromJson<GameData>(dataAsJson);
+            }
         }
-        else
+        catch (System.Exception)
         {
-            data = new GameData();
+
+            throw new IOException();
         }
     }
 
