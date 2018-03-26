@@ -6,11 +6,12 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour {
 
     DataController data = new DataController();
+    public string Scene_to_load;
 
     public void PlayNewGame()
     {
         data.SaveGameData();
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(Scene_to_load);
     }
 
     public void ContinuGame()
