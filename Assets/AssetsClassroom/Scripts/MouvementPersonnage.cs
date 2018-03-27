@@ -19,6 +19,11 @@ public class MouvementPersonnage : Character
         isSelected = false;
     }
 
+    public float getSpeedPlayer()
+    {
+        return speedPlayer;
+    }
+
     public Vector3 getPosPlayer()
     {
         return posPlayer;
@@ -50,92 +55,32 @@ public class MouvementPersonnage : Character
                 posPlayer += Vector3.left;
 
                 GetComponent<Animator>().Play("WalkingLeft");
-                //GetComponent<Animator>().Play("StandingLeft");
+                
                 PMPlayer = PMPlayer - 1;
             }
             if (Input.GetKey(KeyCode.D) && transform.position == posPlayer)
             {        // Right
                 posPlayer += Vector3.right;
                 GetComponent<Animator>().Play("WalkingRight");
-                //GetComponent<Animator>().Play("StandingRight");
+                
                 PMPlayer = PMPlayer - 1;
             }
             if (Input.GetKey(KeyCode.Z) && transform.position == posPlayer)
             {        // Up
                 posPlayer += Vector3.up;
                 GetComponent<Animator>().Play("WalkingUp");
-                //GetComponent<Animator>().Play("StandingUp");
+                
                 PMPlayer = PMPlayer - 1;
             }
             if (Input.GetKey(KeyCode.S) && transform.position == posPlayer)
             {        // Down
                 posPlayer += Vector3.down;
                 GetComponent<Animator>().Play("WalkingDown");
-                //GetComponent<Animator>().Play("StandingDown");
+                
                 PMPlayer = PMPlayer - 1;
-
-                //GetComponent<Animator>().SetTrigger("StandLeft");
-
-                /*GetComponent<Animator>().SetTrigger("WalkLeft");
-                if (PMPlayer <= 0)
-                {
-                    Debug.Log("T'es mauvais Jack");
-                }
-                PMPlayer = PMPlayer - 1;*/
-            }
-            /*if (Input.GetKey(KeyCode.D) && transform.position == posPlayer)
-            {        // Right
-                posPlayer += Vector3.right;
-                //GetComponent<Animator>().SetTrigger("StandRight");
-                GetComponent<Animator>().SetTrigger("WalkRight");
-                if (PMPlayer <= 0)
-                {
-                    Debug.Log("T'es nul Jack");
-                }
-                PMPlayer = PMPlayer - 1;
-            }
-            if (Input.GetKey(KeyCode.Z) && transform.position == posPlayer)
-            {        // Up
-                posPlayer += Vector3.up;
-                //GetComponent<Animator>().SetTrigger("StandUp");
-                GetComponent<Animator>().SetTrigger("WalkUp");
-                if (PMPlayer <= 0)
-                {
-                    Debug.Log("T'es moche Jack");
-                }
-                PMPlayer = PMPlayer - 1;
-            }
-            if (Input.GetKey(KeyCode.S) && transform.position == posPlayer)
-            {        // Down
-                posPlayer += Vector3.down;
-                //GetComponent<Animator>().SetTrigger("StandDown");
-                GetComponent<Animator>().SetTrigger("WalkDown");
-                if (PMPlayer <= 0)
-                {
-                    Debug.Log("T'es mort Jack");
-                }
-                PMPlayer = PMPlayer - 1;
-            }*/
+            }  
+            
             transform.position = Vector3.MoveTowards(transform.position, posPlayer, Time.deltaTime * speedPlayer);    // Move there
-        }
-        /*if (Input.GetKey(KeyCode.Space) && transform.position == posPlayer)
-        {
-
-            // GameObject Target = GameObject.Find("Target");
-            /*Target.GetComponent<Ennemy>().getDamaged(Attack);*/
-        //GameObject[] Targets = whoCanIAttack();
-        //AttackTarget(Targets[0]);
-        //AttackTarget(Target);
-        //if (PA <= 0)
-        //{
-        //    Debug.Log("T'es faible Jack");
-        //}
-        //PA = PA - 1;
-
-        //}
-
-
-    }
-
-    
+        }   
+    }  
 }
