@@ -419,7 +419,7 @@ Tilemap:
     e33: 1
   m_TileRefreshArray:
   - serializedVersion: 1
-    m_DirtyIndex: 1
+    m_DirtyIndex: 0
 --- !u!213 &653603640
 Sprite:
   m_ObjectHideFlags: 0
@@ -562,7 +562,7 @@ Sprite:
         format: 0
         dimension: 0
       m_DataSize: 80
-      _typelessdata: 000000bf0000003f0000000000000000000000000000003f0000003f000000000000000000000000000000bf000000bf0000000000000000000000000000003f000000bf000000000000000000000000
+      _typelessdata: 000000bf0000003f00000000000000000000803f0000003f0000003f000000000000803f0000803f000000bf000000bf0000000000000000000000000000003f000000bf000000000000803f00000000
     textureRect:
       serializedVersion: 2
       x: 0
@@ -1019,7 +1019,7 @@ Sprite:
         format: 0
         dimension: 0
       m_DataSize: 80
-      _typelessdata: 000000bf0000003f0000000000000000000000000000003f0000003f000000000000000000000000000000bf000000bf0000000000000000000000000000003f000000bf000000000000000000000000
+      _typelessdata: 000000bf0000003f00000000000000000000803f0000003f0000003f000000000000803f0000803f000000bf000000bf0000000000000000000000000000003f000000bf000000000000803f00000000
     textureRect:
       serializedVersion: 2
       x: 0
@@ -1215,7 +1215,8 @@ MonoBehaviour:
   AttackPlayer: 10
   DefensePlayer: 0
   "port\xE9ePlayer": 2
-  PAPlayer: 0
+  PAPlayer: 1
+  PAPlayerMax: 0
 --- !u!1 &1237641013
 GameObject:
   m_ObjectHideFlags: 0
@@ -2692,9 +2693,9 @@ Tilemap:
   - serializedVersion: 1
     m_DirtyIndex: 0
   - serializedVersion: 1
-    m_DirtyIndex: 1
+    m_DirtyIndex: 0
   - serializedVersion: 1
-    m_DirtyIndex: 1
+    m_DirtyIndex: 0
 --- !u!1 &1706664926
 GameObject:
   m_ObjectHideFlags: 0
@@ -2874,7 +2875,8 @@ MonoBehaviour:
   AttackPlayer: 10
   DefensePlayer: 0
   "port\xE9ePlayer": 2
-  PAPlayer: 0
+  PAPlayer: 1
+  PAPlayerMax: 0
 --- !u!1 &1719833949
 GameObject:
   m_ObjectHideFlags: 0

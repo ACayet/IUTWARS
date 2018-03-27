@@ -10,16 +10,27 @@ public class CombatJoueur : MonoBehaviour {
     public int portéePlayer;
     Vector3 PlayerPosition;
     public int PAPlayer;
+    public int PAPlayerMax;
 
     // Use this for initialization
     void Start () {
-		
+        PAPlayerMax = PAPlayer;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
+
+    public int getPAPlayer()
+    {
+        return PAPlayer;
+    }
+
+    public void resetPAPlayer()
+    {
+        PAPlayer = PAPlayerMax;
+    }
 
     public void getPositionOfPlayer(Vector3 position)
     {
@@ -33,11 +44,13 @@ public class CombatJoueur : MonoBehaviour {
 
     public void AttackTarget(GameObject theTarget)
     {
-        if (isThereAnEnnemyToAttack(PlayerPosition))
+        
+        if (isThereAnEnnemyToAttack(PlayerPosition) && PAPlayer > 0)
         {
             if (canIAttackThis(theTarget, whoCanIAttack(PlayerPosition)))
             {
                 Debug.Log("JOHN CENA"); theTarget.GetComponent<Ennemy>().getDamaged(AttackPlayer);
+                PAPlayer = PAPlayer - 1;
             }
 
 
