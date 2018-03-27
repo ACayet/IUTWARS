@@ -8,17 +8,19 @@ using UnityEngine.UI;
 public class DataController : MonoBehaviour
 {
     GameData data = new GameData();
-    public Text LoadData = GameObject.Find("DataLoad").GetComponent<Text>();
+    public Text LoadData;
 
-    private static string gameDataFileName = "data.save";
-    private string gameDataProjectFilePath = "/StreamingAssets/" + gameDataFileName;
+    private static string gameDataFileName;
+    private string gameDataProjectFilePath;
 
     void Start()
     {
         //SaveGameData();
 
         //LoadGameData();
-
+        LoadData = GameObject.Find("DataLoad").GetComponent<Text>();
+        gameDataFileName = "data.save";
+        gameDataProjectFilePath = "/StreamingAssets/" + gameDataFileName;
         LoadData.text = "Commence par créer une nouvelle partie ";
     }
 
@@ -29,9 +31,9 @@ public class DataController : MonoBehaviour
         //{
             GameData dataL = (GameData)DataManager.Load(filePath);
             Debug.Log("Data load !");
-            //Debug.Log(dataL.AttackPlayer.ToString());
+            Debug.Log(dataL.AttackPlayer.ToString());
 
-            LoadData.text = dataL.AttackPlayer.ToString();
+            //LoadData.text = dataL.AttackPlayer.ToString();
 
 
         //}

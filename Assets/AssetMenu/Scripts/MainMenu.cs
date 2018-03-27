@@ -10,15 +10,13 @@ public class MainMenu : MonoBehaviour {
 
     public void PlayNewGame()
     {
-        data.SaveGameData();
-        //SceneManager.LoadScene(Scene_to_load);
+        SceneManager.LoadScene(Scene_to_load);
     }
 
     public void ContinuGame()
     {
-        DataController data = new DataController();
         data.LoadGameData();
-        //SceneManager.LoadScene(2);//à adapter
+        SceneManager.LoadScene(2);//à adapter
     }
 
     public void QuitGame()
