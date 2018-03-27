@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,12 +13,31 @@ public class Ennemy : Character
     Vector3 EnemyPosition;
     public int PAEnemy;
     public int PAEnemyMax;
+    public int PMEnemy;
+    public int PMEnemyMax;
     float speedEnemy = 2.0f;
 
     // Use this for initialization
     void Start()
     {
         EnemyPosition = transform.position;
+        setPAEnemytotheMax();
+        setPMEnemytotheMax();
+    }
+
+    public int getPAEnemy()
+    {
+        return PAEnemy;
+    }
+
+    public int getPMEnemyMax()
+    {
+        return PMEnemyMax;
+    }
+
+    public int getRange()
+    {
+        return portéeEnemy;
     }
 
     // Update is called once per frame
@@ -36,6 +56,11 @@ public class Ennemy : Character
         }
     }
 
+    internal float getSpeed()
+    {
+        return speedEnemy;
+    }
+
     public void getDamaged(int AttackerAttack)
     {
         HPEnemy = HPEnemy - (AttackerAttack - DefenseEnemy);
@@ -44,5 +69,15 @@ public class Ennemy : Character
     public Vector3 getPos()
     {
         return EnemyPosition;
+    }
+
+    internal void setPAEnemytotheMax()
+    {
+        PAEnemy = PAEnemyMax;
+    }
+
+    internal void setPMEnemytotheMax()
+    {
+        PMEnemy = PMEnemyMax;
     }
 }

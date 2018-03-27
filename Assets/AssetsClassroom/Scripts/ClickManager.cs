@@ -52,7 +52,7 @@ public class ClickManager : MonoBehaviour
         }
     }
 
-    void changeSelected(GameObject Hero)
+    public void changeSelected(GameObject Hero)
     {
         foreach (GameObject ob in heroes)
         {
@@ -61,4 +61,6 @@ public class ClickManager : MonoBehaviour
         Hero.GetComponent<MouvementPersonnage>().setSelected(true);
         currentHero = Hero;
     }
+
+    
 }

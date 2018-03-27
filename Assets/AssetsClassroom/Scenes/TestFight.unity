@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 75001093}
   - component: {fileID: 75001092}
   - component: {fileID: 75001095}
+  - component: {fileID: 75001098}
   - component: {fileID: 75001096}
   - component: {fileID: 75001097}
   m_Layer: 0
@@ -145,7 +146,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1405207575}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &75001092
 MonoBehaviour:
@@ -235,9 +236,11 @@ MonoBehaviour:
   HPEnemy: 100
   AttackEnemy: 0
   DefenseEnemy: 0
-  "port\xE9eEnemy": 0
+  "port\xE9eEnemy": 10
   PAEnemy: 0
-  PAEnemyMax: 0
+  PAEnemyMax: 1
+  PMEnemy: 0
+  PMEnemyMax: 1
 --- !u!61 &75001096
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -283,6 +286,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &75001098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 75001090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1968b1a5c6b0aec4cb8736460cfc699d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &104599255
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,7 +325,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1405207575}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!483693784 &104599257
 TilemapRenderer:
@@ -691,7 +705,6 @@ GameObject:
   m_Component:
   - component: {fileID: 977522445}
   - component: {fileID: 977522444}
-  - component: {fileID: 977522447}
   - component: {fileID: 977522446}
   m_Layer: 0
   m_Name: FightManager
@@ -733,17 +746,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df2e7ec52a48717469f6e15b391e144f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &977522447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 977522443}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1968b1a5c6b0aec4cb8736460cfc699d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!213 &982904081
@@ -1097,7 +1099,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1405207575}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1211001606
 MonoBehaviour:
@@ -1340,7 +1342,7 @@ GameObject:
   - component: {fileID: 1251874389}
   m_Layer: 0
   m_Name: table_pc_on
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1395,12 +1397,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1251874386}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.41, y: -1.2524219, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 1405207575}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1251874389
 Rigidbody2D:
@@ -1484,6 +1486,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1251874388}
   - {fileID: 1211001605}
   - {fileID: 1602068966}
   - {fileID: 75001091}
@@ -1521,7 +1524,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1405207575}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!483693784 &1602068967
 TilemapRenderer:
@@ -2758,7 +2761,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1405207575}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1706664928
 MonoBehaviour:
@@ -2919,6 +2922,7 @@ GameObject:
   - component: {fileID: 1719833953}
   - component: {fileID: 1719833952}
   - component: {fileID: 1719833951}
+  - component: {fileID: 1719833957}
   - component: {fileID: 1719833956}
   - component: {fileID: 1719833955}
   m_Layer: 0
@@ -2939,7 +2943,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1405207575}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1719833951
 MonoBehaviour:
@@ -2955,9 +2959,11 @@ MonoBehaviour:
   HPEnemy: 100
   AttackEnemy: 0
   DefenseEnemy: 0
-  "port\xE9eEnemy": 0
+  "port\xE9eEnemy": 5
   PAEnemy: 0
-  PAEnemyMax: 0
+  PAEnemyMax: 1
+  PMEnemy: 0
+  PMEnemyMax: 3
 --- !u!114 &1719833952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3077,3 +3083,14 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
+--- !u!114 &1719833957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1719833949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1968b1a5c6b0aec4cb8736460cfc699d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
