@@ -14,13 +14,18 @@ public class CombatJoueur : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        PAPlayerMax = PAPlayer;
+        setPAPlayertotheMax();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
+   
+    public void setPAPlayertotheMax()
+    {
+        PAPlayer = PAPlayerMax;
+    }
 
     public int getPAPlayer()
     {

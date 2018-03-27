@@ -39,7 +39,7 @@ public class ClickManager : MonoBehaviour
                 //currentClicked.GetComponent<Ennemy>().getDamaged(currentHero.GetComponent<MouvementPersonnage>().getAttack());
                 if (hit.collider.tag == "Ennemy")
                 {
-                    if (this.GetComponent<TurnManager>().getTurn() == "Player")
+                    if (GetComponent<TurnManager>().getTurn() == "Player")
                     {
                         currentHero.GetComponent<CombatJoueur>().AttackTarget(currentClicked);
                     }

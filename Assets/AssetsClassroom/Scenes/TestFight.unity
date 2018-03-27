@@ -159,6 +159,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PMPlayer: 0
+  PMPlayerMax: 0
 --- !u!212 &75001093
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -231,9 +232,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d543710b818b0149a75c9533725d22a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HPEnnemy: 100
-  AttackEnnemy: 10
-  DefenseEnnemy: 0
+  HPEnemy: 100
+  AttackEnemy: 0
+  DefenseEnemy: 0
+  "port\xE9eEnemy": 0
+  PAEnemy: 0
+  PAEnemyMax: 0
 --- !u!61 &75001096
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -687,6 +691,8 @@ GameObject:
   m_Component:
   - component: {fileID: 977522445}
   - component: {fileID: 977522444}
+  - component: {fileID: 977522447}
+  - component: {fileID: 977522446}
   m_Layer: 0
   m_Name: FightManager
   m_TagString: Untagged
@@ -718,6 +724,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &977522446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 977522443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df2e7ec52a48717469f6e15b391e144f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &977522447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 977522443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1968b1a5c6b0aec4cb8736460cfc699d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!213 &982904081
 Sprite:
   m_ObjectHideFlags: 0
@@ -1138,7 +1166,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7316621abd0310e478c0739d44aee908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PMPlayer: 10
+  PMPlayer: 0
+  PMPlayerMax: 10
 --- !u!212 &1211001610
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1215,8 +1244,8 @@ MonoBehaviour:
   AttackPlayer: 10
   DefensePlayer: 0
   "port\xE9ePlayer": 2
-  PAPlayer: 1
-  PAPlayerMax: 0
+  PAPlayer: 0
+  PAPlayerMax: 1
 --- !u!1 &1237641013
 GameObject:
   m_ObjectHideFlags: 0
@@ -2742,7 +2771,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7316621abd0310e478c0739d44aee908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PMPlayer: 9
+  PMPlayer: 0
+  PMPlayerMax: 10
 --- !u!212 &1706664929
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2875,8 +2905,8 @@ MonoBehaviour:
   AttackPlayer: 10
   DefensePlayer: 0
   "port\xE9ePlayer": 2
-  PAPlayer: 1
-  PAPlayerMax: 0
+  PAPlayer: 0
+  PAPlayerMax: 1
 --- !u!1 &1719833949
 GameObject:
   m_ObjectHideFlags: 0
@@ -2922,9 +2952,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d543710b818b0149a75c9533725d22a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HPEnnemy: 100
-  AttackEnnemy: 10
-  DefenseEnnemy: 0
+  HPEnemy: 100
+  AttackEnemy: 0
+  DefenseEnemy: 0
+  "port\xE9eEnemy": 0
+  PAEnemy: 0
+  PAEnemyMax: 0
 --- !u!114 &1719833952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2937,6 +2970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PMPlayer: 0
+  PMPlayerMax: 0
 --- !u!212 &1719833953
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -9,14 +9,21 @@ public class MouvementPersonnage : Character
     float speedPlayer;                         // Speed of movement
     public int PMPlayer;
     bool isSelected;
+    public int PMPlayerMax;
 
     // Use this for initialization
     void Start()
     {
         posPlayer = transform.position; // Take the initial position
         speedPlayer = 2.0f;                        // Speed of movement
-                                                   
+
+        setPMtotheMax();                    
         isSelected = false;
+    }
+
+    public void setPMtotheMax()
+    {
+        PMPlayer = PMPlayerMax;
     }
 
     public float getSpeedPlayer()
