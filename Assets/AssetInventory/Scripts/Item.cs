@@ -10,7 +10,7 @@ public class Item {
     public Texture2D itemIcon;
     public int itemPower;
     public ItemType itemType;
-    
+
     public enum ItemType
     {
         Weapon,
@@ -27,13 +27,8 @@ public class Item {
         itemPower = power;
         itemType = type;
     }
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    public Item(){
+    }
+
 }
