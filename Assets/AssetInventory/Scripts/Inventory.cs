@@ -12,10 +12,13 @@ public class Inventory : MonoBehaviour {
     public GUISkin skin;
     private bool showTooltip;
     private string tooltip;
+    private bool draggingItem;
+    private Item draggedItem;
+    private int prevIndex;
 
     // Use this for initialization
     void Start () {
-        for(int i = 0; i < (slotsX * slotsY); i++)
+        for(int k = 0; k < (slotsX * slotsY); k++)
         {
             slots.Add(new Item());
             inventory.Add(new Item());
@@ -24,9 +27,8 @@ public class Inventory : MonoBehaviour {
         for(int a = 0; a < (slotsX * slotsY); a++)
         {
             AddItem(a);
-            AddItem(a);
         }
-        RemoveItem(0);
+        //RemoveItem(0);
         print(InventoryContains(1));
     }
 
@@ -41,21 +43,34 @@ public class Inventory : MonoBehaviour {
 
     // Update is called once per frame
     void OnGUI () {
+        if(GUI.Button(new Rect(40, 250, 100, 40), "Save"))
+        {
+            SaveInventory();
+        }
+        if (GUI.Button(new Rect(40, 300, 100, 40), "Load"))
+        {
+            LoadInventory();
+        }
         tooltip = "";
         GUI.skin = skin;
         if (showInventory)
         {
             DrawInventory();
+            if (showTooltip)
+            {
+                GUI.Box(new Rect(Event.current.mousePosition.x + 15f, Event.current.mousePosition.y, 200, 200), tooltip);
+            }
         }
-        if (showTooltip)
+        if (draggingItem)
         {
-            GUI.Box(new Rect(Event.current.mousePosition.x, Event.current.mousePosition.y, 200, 200), tooltip);
+            GUI.DrawTexture(new Rect(Event.current.mousePosition.x, Event.current.mousePosition.y, 50, 50), draggedItem.itemIcon);
         }
 		
 	}
 
     void DrawInventory()
     {
+        Event e = Event.current;
         int i = 0;
         for(int y = 0; y < slotsY; y++)
         {
@@ -64,19 +79,53 @@ public class Inventory : MonoBehaviour {
                 Rect slotRect = new Rect(x * 60, y * 60, 50, 50);
                 GUI.Box(slotRect, "", skin.GetStyle("Slot"));
                 slots[i] = inventory[i];
+                Item item = slots[i];
                 if (slots[i].itemName != null)
                 {
                     GUI.DrawTexture(slotRect, slots[i].itemIcon);
-                    if (slotRect.Contains(Event.current.mousePosition))
+                    if (slotRect.Contains(e.mousePosition))
                     {
                         tooltip = CreateTooltip(slots[i]);
                         showTooltip = true;
+                        if (e.button == 0 && e.type == EventType.MouseDrag && !draggingItem)
+                        {
+                            draggingItem = true;
+                            prevIndex = i;
+                            draggedItem = slots[i];
+                            inventory[i] = new Item();
+                        }
+                        if (e.type == EventType.MouseUp && draggingItem)
+                        {
+                            inventory[prevIndex] = inventory[i];
+                            inventory[i] = draggedItem;
+                            draggingItem = false;
+                            draggedItem = null;
+                        }
+                        if (e.isMouse && e.type == EventType.MouseDown && e.button == 1)
+                        {
+                            if (item.itemType == Item.ItemType.Consumable)
+                            {
+                                UseConsumable(slots[i], i, true);
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    if(slotRect.Contains(e.mousePosition))
+                    {
+                        if(e.type == EventType.MouseUp && draggingItem){
+                            inventory[i] = draggedItem;
+                            draggingItem = false;
+                            draggedItem = null;
+                        }
                     }
                 }
                 if(tooltip == "")
                 {
                     showTooltip = false;
                 }
+                
                 i++;
             }
         }
@@ -84,7 +133,7 @@ public class Inventory : MonoBehaviour {
 
     string CreateTooltip(Item item)
     {
-        tooltip = "<color=#ffffff>" + item.itemName + "</color>";
+        tooltip = "<color=#ffffff>" + item.itemName + "\n\n" + item.itemDesc + "\n\n" + item.itemPower + "</color>";
         return tooltip;
     }
 
@@ -118,6 +167,22 @@ public class Inventory : MonoBehaviour {
         }
     }
 
+    void UseConsumable(Item item, int slot, bool deleteItem)
+    {
+        switch (item.itemID)
+        {
+            case 2:
+                {
+                    print("USED CONSUMABLE: ");
+                    break;
+                }
+        }
+        if (deleteItem)
+        {
+            inventory[slot] = new Item();
+        }
+    }
+
 
     bool InventoryContains(int id)
     {
@@ -131,5 +196,21 @@ public class Inventory : MonoBehaviour {
             }
         }
         return result;
+    }
+
+    void SaveInventory()
+    {
+       for(int i = 0; i<inventory.Count; i++)
+        {
+            PlayerPrefs.SetInt("Inventory" + i, inventory[i].itemID);
+        }
+    }
+
+    void LoadInventory()
+    {
+        for(int i = 0; i < inventory.Count; i++)
+        {
+            inventory[i] = PlayerPrefs.GetInt("Inventory" + i, -1) > 0 ? database.items[PlayerPrefs.GetInt("Inventory" + i)] : new Item();
+        }
     }
 }
