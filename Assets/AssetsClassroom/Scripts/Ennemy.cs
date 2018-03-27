@@ -5,28 +5,31 @@ using UnityEngine;
 public class Ennemy : Character
 {
 
-    Vector3 posEnnemy;                                // For movement
-    float speedEnnemy = 2.0f;                         // Speed of movement
-    public int HPEnnemy = 100;
-    public int AttackEnnemy = 10;
-    public int DefenseEnnemy = 0;
+    public int HPEnemy;
+    public int AttackEnemy;
+    public int DefenseEnemy;
+    public int portéeEnemy;
+    Vector3 EnemyPosition;
+    public int PAEnemy;
+    public int PAEnemyMax;
+    float speedEnemy = 2.0f;
 
     // Use this for initialization
     void Start()
     {
-        posEnnemy = transform.position;
+        EnemyPosition = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (HPEnnemy <= 0)
+        if (HPEnemy <= 0)
         {
-            speedEnnemy = 100.0f;
-            posEnnemy += 100 * Vector3.up;
+            speedEnemy = 100.0f;
+            EnemyPosition += 100 * Vector3.up;
             //GetComponent<Animator>().SetTrigger("StandDown");
             GetComponent<Animator>().SetTrigger("WalkDown");
-            transform.position = Vector3.MoveTowards(transform.position, posEnnemy, Time.deltaTime * speedEnnemy);
+            transform.position = Vector3.MoveTowards(transform.position, EnemyPosition, Time.deltaTime * speedEnemy);
 
             //Destroy(this);
 
@@ -35,11 +38,11 @@ public class Ennemy : Character
 
     public void getDamaged(int AttackerAttack)
     {
-        HPEnnemy = HPEnnemy - (AttackerAttack - DefenseEnnemy);
+        HPEnemy = HPEnemy - (AttackerAttack - DefenseEnemy);
     }
 
     public Vector3 getPos()
     {
-        return posEnnemy;
+        return EnemyPosition;
     }
 }
