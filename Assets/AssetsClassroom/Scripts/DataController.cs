@@ -7,17 +7,19 @@ using UnityEditor;
 public class DataController : MonoBehaviour
 {
     GameData data = new GameData();
+    public object obj;
 
-    private string gameDataFileName = "data.json";
+    private static string gameDataFileName = "data.save";
 
     void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        SaveGameData();
 
-        
+
+
     }
 
-    private string gameDataProjectFilePath = "/StreamingAssets/data.json";
+    private string gameDataProjectFilePath = "/StreamingAssets/" + gameDataFileName;
 
     [MenuItem("Window/Game Data Editor")]
     static void Init()
@@ -25,27 +27,27 @@ public class DataController : MonoBehaviour
         EditorWindow.GetWindow(typeof(DataController)).Show();
     }
 
-    void OnGUI()
-    {
-        if (data != null)
-        {
-            SerializedObject serializedObject = new SerializedObject(this);
-            SerializedProperty serializedProperty = serializedObject.FindProperty("data");
-            EditorGUILayout.PropertyField(serializedProperty, true);
+    //void OnGUI()
+    //{
+    //    if (data != null)
+    //    {
+    //        SerializedObject serializedObject = new SerializedObject(this);
+    //        SerializedProperty serializedProperty = serializedObject.FindProperty("data");
+    //        EditorGUILayout.PropertyField(serializedProperty, true);
 
-            serializedObject.ApplyModifiedProperties();
+    //        serializedObject.ApplyModifiedProperties();
 
-            if (GUILayout.Button("Save data"))
-            {
-                SaveGameData();
-            }
-        }
+    //        if (GUILayout.Button("Save data"))
+    //        {
+    //            SaveGameData();
+    //        }
+    //    }
 
-        if (GUILayout.Button("Load data"))
-        {
-            LoadGameData();
-        }
-    }
+    //    if (GUILayout.Button("Load data"))
+    //    {
+    //        LoadGameData();
+    //    }
+    //}
 
     /*   public void SubmitNewPlayerScore(int newScore)
        {
@@ -78,12 +80,15 @@ public class DataController : MonoBehaviour
 
     public void SaveGameData()
     {
+        Debug.Log("Data save in "+ Application.dataPath + gameDataProjectFilePath);
+        GameData data = new GameData();
+        data.HPPlayer = 5;
+        data.PAPlayer = 5;
+        data.PMPlayer = 5;
+        data.DefensePlayer = 5;
+        data.portéePlayer = 2;
 
-        string dataAsJson = JsonUtility.ToJson(data);
-
-        string filePath = Application.dataPath + gameDataProjectFilePath;
-        File.WriteAllText(filePath, dataAsJson);
-        Debug.Log("Data save !!!");
+        DataManager.Save(data, gameDataFileName);
 
     }
 
