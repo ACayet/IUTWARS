@@ -29,6 +29,7 @@ public class Item {
     }
 
     public Item(){
+        this.itemID = -1;
     }
 
 }
