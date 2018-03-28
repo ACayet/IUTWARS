@@ -1,7 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
+using UnityEngine.SceneManagement;
 
 //[System.Serializable]
 [Serializable]
@@ -14,6 +15,5 @@ public class GameData {
     public int portéePlayer;
     public int PMPlayer;
     public int PAPlayer;
-
-
+    public string CurentScene;
 }

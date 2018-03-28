@@ -5,18 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
-    DataController data = new DataController();
+    DataController dataC = new DataController();
+    GameData loadData;
     public string Scene_to_load;
 
     public void PlayNewGame()
     {
+        dataC.SaveGameData(Scene_to_load);
         SceneManager.LoadScene(Scene_to_load);
     }
 
     public void ContinuGame()
     {
-        data.LoadGameData();
-        SceneManager.LoadScene(2);//à adapter
+        loadData = dataC.LoadGameData();
+        SceneManager.LoadScene(loadData.CurentScene);
     }
 
     public void QuitGame()

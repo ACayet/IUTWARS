@@ -4,6 +4,7 @@ using System.Collections;
 using System.IO;                                                        // The System.IO namespace contains functions related to loading and saving files
 using UnityEditor;
 using UnityEngine.UI;
+using System;
 
 public class DataController : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class DataController : MonoBehaviour
         LoadData.text = "Commence par créer une nouvelle partie ";
     }
 
-    public void LoadGameData()
+    public GameData LoadGameData()
     {
         string filePath = Application.dataPath + gameDataProjectFilePath;
         //try
@@ -33,17 +34,18 @@ public class DataController : MonoBehaviour
             Debug.Log("Data load !");
             Debug.Log(dataL.AttackPlayer.ToString());
 
-            //LoadData.text = dataL.AttackPlayer.ToString();
-
+        //  LoadData.text = dataL.AttackPlayer.ToString();
+            return dataL;
 
         //}
         //catch (System.Exception)
         //{
         //    throw new IOException("Load fail !");
         //}
+
     }
 
-    public void SaveGameData()
+    public void SaveGameData(string SceneNameToLoad)
     {
         Debug.Log("Data save in "+ Application.dataPath + gameDataProjectFilePath);
         GameData data = new GameData();
@@ -53,9 +55,10 @@ public class DataController : MonoBehaviour
         data.PMPlayer = 5;
         data.DefensePlayer = 5;
         data.portéePlayer = 2;
+        data.CurentScene = SceneNameToLoad;
 
         DataManager.Save(data, gameDataFileName);
 
-    }
+    } 
 
 } 
