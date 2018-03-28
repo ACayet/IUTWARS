@@ -21,12 +21,18 @@ public class TurnManager : MonoBehaviour {
         {
             Debug.Log("Enemy turn");
             turnChange();
-            foreach (GameObject ob in ennemies)
+        }
+        else
+        {
+            Debug.Log("Patientez");
+
+        }
+        if(turn == "Enemy")
+        {
+            foreach(GameObject ob in ennemies)
             {
                 ob.GetComponent<EnemyTurn>().AttackTime();
-                
             }
-            turnChange();
         }
 	}
 
