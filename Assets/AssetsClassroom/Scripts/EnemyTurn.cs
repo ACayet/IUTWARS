@@ -18,6 +18,7 @@ public class EnemyTurn : MonoBehaviour {
     {
         if (isThereAPlayerToAttack(GetComponent<Ennemy>().getPos()))
         {
+            Debug.Log(GetComponent<Ennemy>().getPos().ToString());
             moveToClosestPlayer(closestTarget(GetComponent<Ennemy>().getPos()));
         }
         
@@ -46,21 +47,27 @@ public class EnemyTurn : MonoBehaviour {
         GetComponent<Animator>().Play("WalkingDown");
         Debug.Log(toTeleport.ToString());
         Debug.Log(closestPlayer.GetComponent<MouvementPersonnage>().getPosPlayer().ToString());
-        GetComponent<Ennemy>().modifPos(Vector3.down);
-        transform.position = Vector3.MoveTowards(transform.position, GetComponent<Ennemy>().getPos(), Time.deltaTime * GetComponent<Ennemy>().getSpeed());    // Move there
+        GetComponent<Ennemy>().modifPos(Vector3.up);
+        //transform.position = Vector3.MoveTowards(transform.position, GetComponent<Ennemy>().getPos(), Time.deltaTime * GetComponent<Ennemy>().getSpeed());    // Move there
+        transform.Translate(Vector3.down);
     }
 
     public List<GameObject> whoCanIAttack(Vector3 actualPosition)
 
     {
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
+        Debug.Log(players[0].GetComponent<MouvementPersonnage>().getPosPlayer().ToString());
         // GameObject[] possibleTargets = new GameObject[GameObject.FindGameObjectsWithTag("Player").Length];
         List<GameObject> possibleTargets = new List<GameObject>();
 
         int nbTargets = 0;
         foreach (GameObject ob in players)
         {
-            if ((Vector3.Distance(ob.GetComponent<Ennemy>().getPos(), actualPosition) <= GetComponent<Ennemy>().getRange() + GetComponent<Ennemy>().getPMEnemyMax()))
+            Debug.Log("ob.GetComponent<Ennemy>().getPos() : " + ob.GetComponent<MouvementPersonnage>().getPosPlayer().ToString());
+            Debug.Log("actualPosition : " + actualPosition.ToString());
+            Debug.Log("GetComponent<Ennemy>().getRange() : " + GetComponent<Ennemy>().getRange());
+            Debug.Log("GetComponent<Ennemy>().getPMEnemyMax() : " + GetComponent<Ennemy>().getPMEnemyMax());
+            if ((Vector3.Distance(ob.GetComponent<MouvementPersonnage>().getPosPlayer(), actualPosition) <= GetComponent<Ennemy>().getRange() + GetComponent<Ennemy>().getPMEnemyMax()))
             {
                 possibleTargets.Add(ob);
                 nbTargets++;

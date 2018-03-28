@@ -6,7 +6,8 @@ public class TurnManager : MonoBehaviour {
 
     GameObject[] ennemies = null;
     GameObject[] heroes = null;
-    string turn = "";
+    public string turn = "";
+    public int nbTurn = 1;
 
     // Use this for initialization
     void Start () {
@@ -27,6 +28,7 @@ public class TurnManager : MonoBehaviour {
 
             }
             turnChange();
+            nbTurn++;
         }
         
 	}
@@ -62,7 +64,6 @@ public class TurnManager : MonoBehaviour {
         if(turn == "Enemy")
         {
             turn = "Player";
-            GetComponent<ClickManager>().changeSelected(heroes[0]);
             refreshHeroes();
 
         }

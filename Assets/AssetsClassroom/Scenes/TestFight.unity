@@ -294,7 +294,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 75001090}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0fb481fd958b3a44a5ff0055925dfd3, type: 3}
+  m_Script: {fileID: 11500000, guid: 1968b1a5c6b0aec4cb8736460cfc699d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &104599255
@@ -748,6 +748,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df2e7ec52a48717469f6e15b391e144f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  turn: 
+  nbTurn: 1
 --- !u!213 &982904081
 Sprite:
   m_ObjectHideFlags: 0
@@ -2922,9 +2924,9 @@ GameObject:
   - component: {fileID: 1719833953}
   - component: {fileID: 1719833952}
   - component: {fileID: 1719833951}
-  - component: {fileID: 1719833957}
   - component: {fileID: 1719833956}
   - component: {fileID: 1719833955}
+  - component: {fileID: 1719833957}
   m_Layer: 0
   m_Name: Target2
   m_TagString: Ennemy
