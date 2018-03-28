@@ -194,47 +194,6 @@ RectTransform:
   m_PrefabParentObject: {fileID: 224366336278924180, guid: 780f2388cb49ebf4b9a43cbdcb39deb3,
     type: 2}
   m_PrefabInternal: {fileID: 1933881183}
---- !u!1 &1561954928
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1561954930}
-  - component: {fileID: 1561954929}
-  m_Layer: 0
-  m_Name: Save
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &1561954929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1561954928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4b67152a1e7f824b94405e873fbf2b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LoadData: {fileID: 679584940}
---- !u!4 &1561954930
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1561954928}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.925102, y: -4.1431103, z: -0.8733866}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1811880885
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,7 +365,7 @@ Prefab:
     - target: {fileID: 114697011021996620, guid: 780f2388cb49ebf4b9a43cbdcb39deb3,
         type: 2}
       propertyPath: Scene_to_load
-      value: CartePrincipale
+      value: Couloir_Carte
       objectReference: {fileID: 0}
     - target: {fileID: 4822512648715374, guid: 780f2388cb49ebf4b9a43cbdcb39deb3, type: 2}
       propertyPath: m_RootOrder
