@@ -40,6 +40,11 @@ public class Ennemy : Character
         return portéeEnemy;
     }
 
+    public void modifPos(Vector2 vectorAdd)
+    {
+        EnemyPosition = EnemyPosition + vectorAdd;
+    }
+
     // Update is called once per frame
     void Update()
     {

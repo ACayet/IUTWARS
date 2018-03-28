@@ -89,7 +89,7 @@ public class MouvementPersonnage : Character
                 PMPlayer = PMPlayer - 1;
             }  
             
-            transform.position = Vector3.MoveTowards(transform.position, posPlayer, Time.deltaTime * speedPlayer);    // Move there
+            transform.position = Vector2.MoveTowards(transform.position, posPlayer, Time.deltaTime * speedPlayer);    // Move there
         }   
     }  
 }
