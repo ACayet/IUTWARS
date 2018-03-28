@@ -9,7 +9,7 @@ public class Collision : MonoBehaviour {
     public void OnCollisionEnter2D(Collision2D collision)
     {
         MouvementPersonnage script = gameObject.GetComponent<MouvementPersonnage>();
-        Vector3 oldPos = script.getPosPlayer();
+        Vector2 oldPos = script.getPosPlayer();
         oldPos.y = oldPos.y - 1;
         
         gameObject.transform.SetPositionAndRotation(oldPos, gameObject.transform.rotation);

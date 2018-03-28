@@ -11,11 +11,13 @@ public class MouvementPersonnage : Character
     bool isSelected;
     public int PMPlayerMax;
     Rigidbody2D rgdBdy;
+    
 
     // Use this for initialization
     void Start()
     {
-        rgdBdy = GetComponent<Rigidbody2D>();
+        
+        
         posPlayer = transform.position; // Take the initial position
         speedPlayer = 2.0f;                        // Speed of movement
 
@@ -48,7 +50,7 @@ public class MouvementPersonnage : Character
         }
         else
         {
-            posPlayer = transform.position;
+            posPlayer = rgdBdy.position;
             speedPlayer = 2.0f;
         }
     }
@@ -59,6 +61,9 @@ public class MouvementPersonnage : Character
       
         if (PMPlayer >= 0 && isSelected)
         {
+            Rigidbody2D rgdBdy = GetComponent<Rigidbody2D>(); ;
+            Vector2 mouvementVector = new Vector2(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical"));
+
             if (Input.GetKey(KeyCode.Q) &&  rgdBdy.position == posPlayer)
             {        // Left
                 posPlayer += Vector2.left;
@@ -89,7 +94,7 @@ public class MouvementPersonnage : Character
                 PMPlayer = PMPlayer - 1;
             }  
             
-            transform.position = Vector3.MoveTowards(transform.position, posPlayer, Time.deltaTime * speedPlayer);    // Move there
+            rgdBdy.position = Vector2.MoveTowards(rgdBdy.position, posPlayer, Time.deltaTime * speedPlayer);    // Move there
         }   
     }  
 }
