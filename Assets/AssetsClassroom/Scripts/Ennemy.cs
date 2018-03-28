@@ -10,7 +10,7 @@ public class Ennemy : Character
     public int AttackEnemy;
     public int DefenseEnemy;
     public int portéeEnemy;
-    Vector2 EnemyPosition;
+    Vector3 EnemyPosition;
     public int PAEnemy;
     public int PAEnemyMax;
     public int PMEnemy;
@@ -46,10 +46,10 @@ public class Ennemy : Character
         if (HPEnemy <= 0)
         {
             speedEnemy = 100.0f;
-            EnemyPosition += 100 * Vector2.up;
+            EnemyPosition += 100 * Vector3.up;
             //GetComponent<Animator>().SetTrigger("StandDown");
             GetComponent<Animator>().SetTrigger("WalkDown");
-            transform.position = Vector2.MoveTowards(transform.position, EnemyPosition, Time.deltaTime * speedEnemy);
+            transform.position = Vector3.MoveTowards(transform.position, EnemyPosition, Time.deltaTime * speedEnemy);
 
             //Destroy(this);
 
@@ -66,7 +66,7 @@ public class Ennemy : Character
         HPEnemy = HPEnemy - (AttackerAttack - DefenseEnemy);
     }
 
-    public Vector2 getPos()
+    public Vector3 getPos()
     {
         return EnemyPosition;
     }

@@ -17,22 +17,15 @@ public class TurnManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (!checkStillPlayerTurn() && turn == "Player")
+        if (!checkStillPlayerTurn())
         {
             Debug.Log("Enemy turn");
             turnChange();
         }
-        else
+        if (checkStillEnemyTurn())
         {
             Debug.Log("Patientez");
 
-        }
-        if(turn == "Enemy")
-        {
-            foreach(GameObject ob in ennemies)
-            {
-                ob.GetComponent<EnemyTurn>().AttackTime();
-            }
         }
 	}
 
@@ -44,6 +37,20 @@ public class TurnManager : MonoBehaviour {
             if (ob.GetComponent<CombatJoueur>().getPAPlayer() != 0)
             {
                 Debug.Log("Player still have Action Points left");
+                return true;
+            }
+        }
+        return false;
+    }
+
+    bool checkStillEnemyTurn()
+    {
+        foreach (GameObject ob in ennemies)
+        {
+
+            if (ob.GetComponent<Ennemy>().getPAEnemy() != 0)
+            {
+                Debug.Log("Enemy still have Action Points left");
                 return true;
             }
         }
