@@ -2,25 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyTurn : MonoBehaviour {
+public class EnemyTurnM : MonoBehaviour
+{
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        
-	}
-    
+    // Use this for initialization
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
     public void AttackTime()
     {
         if (isThereAPlayerToAttack(GetComponent<Ennemy>().getPos()))
         {
             moveToClosestPlayer(closestTarget(GetComponent<Ennemy>().getPos()));
         }
-        
+
     }
 
     public int targetNumberEnemy()
@@ -73,18 +76,18 @@ public class EnemyTurn : MonoBehaviour {
     {
         List<GameObject> whoCanIAttackResult = whoCanIAttack(actualPosition);
         GameObject closestPlayer = whoCanIAttackResult[0];
-        foreach(GameObject ob in whoCanIAttackResult)
+        foreach (GameObject ob in whoCanIAttackResult)
         {
 
             Debug.Log("ob.GetComponent<MouvementPersonnage>().getPosPlayer() : " + ob.GetComponent<MouvementPersonnage>().getPosPlayer());
             Debug.Log("closestPlayer.GetComponent<MouvementPersonnage>().getPosPlayer() : " + closestPlayer.GetComponent<MouvementPersonnage>().getPosPlayer());
             if ((Vector3.Distance(ob.GetComponent<MouvementPersonnage>().getPosPlayer(), actualPosition) > Vector3.Distance(closestPlayer.GetComponent<MouvementPersonnage>().getPosPlayer(), actualPosition)))
 
-            if((Vector3.Distance(ob.GetComponent<MouvementPersonnage>().getPosPlayer(), actualPosition) > Vector3.Distance(closestPlayer.GetComponent<MouvementPersonnage>().getPosPlayer(), actualPosition)))
+                if ((Vector3.Distance(ob.GetComponent<MouvementPersonnage>().getPosPlayer(), actualPosition) > Vector3.Distance(closestPlayer.GetComponent<MouvementPersonnage>().getPosPlayer(), actualPosition)))
 
-            {
-                closestPlayer = ob;
-            }
+                {
+                    closestPlayer = ob;
+                }
         }
         return closestPlayer;
     }

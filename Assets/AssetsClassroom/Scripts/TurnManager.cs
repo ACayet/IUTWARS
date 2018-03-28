@@ -24,10 +24,11 @@ public class TurnManager : MonoBehaviour {
             foreach (GameObject ob in ennemies)
             {
                 ob.GetComponent<EnemyTurn>().AttackTime();
-                
+
             }
             turnChange();
         }
+        
 	}
 
     bool checkStillPlayerTurn()
@@ -43,6 +44,7 @@ public class TurnManager : MonoBehaviour {
         }
         return false;
     }
+    
 
     public string getTurn()
     {

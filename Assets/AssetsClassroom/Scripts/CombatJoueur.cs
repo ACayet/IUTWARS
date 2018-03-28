@@ -8,7 +8,7 @@ public class CombatJoueur : MonoBehaviour {
     public int AttackPlayer;
     public int DefensePlayer;
     public int portéePlayer;
-    Vector2 PlayerPosition;
+    Vector3 PlayerPosition;
     public int PAPlayer;
     public int PAPlayerMax;
 
@@ -37,7 +37,7 @@ public class CombatJoueur : MonoBehaviour {
         PAPlayer = PAPlayerMax;
     }
 
-    public void getPositionOfPlayer(Vector2 position)
+    public void getPositionOfPlayer(Vector3 position)
     {
         PlayerPosition = position;
     }
@@ -76,14 +76,14 @@ public class CombatJoueur : MonoBehaviour {
         return false;
     }
 
-    public GameObject[] whoCanIAttack(Vector2 actualPosition)
+    public GameObject[] whoCanIAttack(Vector3 actualPosition)
     {
         GameObject[] ennemies = GameObject.FindGameObjectsWithTag("Ennemy");
         GameObject[] possibleTargets = new GameObject[targetNumber(portéePlayer)];
         int nbTargets = 0;
         foreach (GameObject ob in ennemies)
         {
-            if ((Vector2.Distance(ob.GetComponent<Ennemy>().getPos(), actualPosition) <= portéePlayer))
+            if ((Vector3.Distance(ob.GetComponent<Ennemy>().getPos(), actualPosition) <= portéePlayer))
             {
                 possibleTargets[nbTargets] = ob;
                 nbTargets++;
@@ -92,13 +92,13 @@ public class CombatJoueur : MonoBehaviour {
         return possibleTargets;
     }
 
-    public bool isThereAnEnnemyToAttack(Vector2 actualPosition)
+    public bool isThereAnEnnemyToAttack(Vector3 actualPosition)
     {
         GameObject[] ennemies = GameObject.FindGameObjectsWithTag("Ennemy");
 
         foreach (GameObject ob in ennemies)
         {
-            if ((Vector2.Distance(ob.GetComponent<Ennemy>().getPos(), actualPosition) <= portéePlayer))
+            if ((Vector3.Distance(ob.GetComponent<Ennemy>().getPos(), actualPosition) <= portéePlayer))
             {
                 return true;
             }

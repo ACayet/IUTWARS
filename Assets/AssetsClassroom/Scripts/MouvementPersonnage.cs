@@ -5,17 +5,15 @@ using UnityEngine;
 [System.Serializable]
 public class MouvementPersonnage : Character
 {
-    Vector2 posPlayer;                                // For movement
+    Vector3 posPlayer;                                // For movement
     float speedPlayer;                         // Speed of movement
     public int PMPlayer;
     bool isSelected;
     public int PMPlayerMax;
-    Rigidbody2D rgdBdy;
 
     // Use this for initialization
     void Start()
     {
-        rgdBdy = GetComponent<Rigidbody2D>();
         posPlayer = transform.position; // Take the initial position
         speedPlayer = 2.0f;                        // Speed of movement
 
@@ -33,7 +31,7 @@ public class MouvementPersonnage : Character
         return speedPlayer;
     }
 
-    public Vector2 getPosPlayer()
+    public Vector3 getPosPlayer()
     {
         return posPlayer;
     }
@@ -43,7 +41,7 @@ public class MouvementPersonnage : Character
         isSelected = b;
         if (PMPlayer < 0)
         {
-            posPlayer = new Vector2(0.0f, 0.0f);
+            posPlayer = new Vector3(0.0f, 0.0f, 0.0f);
             speedPlayer = 0.0f;
         }
         else
@@ -59,31 +57,31 @@ public class MouvementPersonnage : Character
       
         if (PMPlayer >= 0 && isSelected)
         {
-            if (Input.GetKey(KeyCode.Q) &&  rgdBdy.position == posPlayer)
+            if (Input.GetKey(KeyCode.Q) && transform.position == posPlayer)
             {        // Left
-                posPlayer += Vector2.left;
+                posPlayer += Vector3.left;
 
                 GetComponent<Animator>().Play("WalkingLeft");
                 
                 PMPlayer = PMPlayer - 1;
             }
-            if (Input.GetKey(KeyCode.D) && rgdBdy.position == posPlayer)
+            if (Input.GetKey(KeyCode.D) && transform.position == posPlayer)
             {        // Right
-                posPlayer += Vector2.right;
+                posPlayer += Vector3.right;
                 GetComponent<Animator>().Play("WalkingRight");
                 
                 PMPlayer = PMPlayer - 1;
             }
-            if (Input.GetKey(KeyCode.Z) && rgdBdy.position == posPlayer)
+            if (Input.GetKey(KeyCode.Z) && transform.position == posPlayer)
             {        // Up
-                posPlayer += Vector2.up;
+                posPlayer += Vector3.up;
                 GetComponent<Animator>().Play("WalkingUp");
                 
                 PMPlayer = PMPlayer - 1;
             }
-            if (Input.GetKey(KeyCode.S) && rgdBdy.position == posPlayer)
+            if (Input.GetKey(KeyCode.S) && transform.position == posPlayer)
             {        // Down
-                posPlayer += Vector2.down;
+                posPlayer += Vector3.down;
                 GetComponent<Animator>().Play("WalkingDown");
                 
                 PMPlayer = PMPlayer - 1;

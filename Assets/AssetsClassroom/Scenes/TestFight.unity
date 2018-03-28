@@ -125,9 +125,9 @@ GameObject:
   - component: {fileID: 75001093}
   - component: {fileID: 75001092}
   - component: {fileID: 75001095}
-  - component: {fileID: 75001098}
   - component: {fileID: 75001096}
   - component: {fileID: 75001097}
+  - component: {fileID: 75001098}
   m_Layer: 0
   m_Name: Target
   m_TagString: Ennemy
@@ -294,7 +294,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 75001090}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1968b1a5c6b0aec4cb8736460cfc699d, type: 3}
+  m_Script: {fileID: 11500000, guid: c0fb481fd958b3a44a5ff0055925dfd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &104599255
