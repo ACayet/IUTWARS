@@ -52,7 +52,8 @@ public class EnemyTurn : MonoBehaviour {
         int nbTargets = 0;
         foreach (GameObject ob in players)
         {
-            if ((Vector2.Distance(ob.GetComponent<Ennemy>().getPos(), actualPosition) <= GetComponent<Ennemy>().getRange() + GetComponent<Ennemy>().getPMEnemyMax()))
+            
+            if ((Vector2.Distance(ob.GetComponent<MouvementPersonnage>().getPosPlayer(), actualPosition) <= GetComponent<Ennemy>().getRange() + GetComponent<Ennemy>().getPMEnemyMax()))
             {
                 possibleTargets[nbTargets] = ob;
                 nbTargets++;
@@ -67,6 +68,7 @@ public class EnemyTurn : MonoBehaviour {
         GameObject closestPlayer = whoCanIAttackResult[0];
         foreach(GameObject ob in whoCanIAttackResult)
         {
+
             if((Vector2.Distance(ob.GetComponent<MouvementPersonnage>().getPosPlayer(), actualPosition) > Vector2.Distance(closestPlayer.GetComponent<MouvementPersonnage>().getPosPlayer(), actualPosition)))
             {
                 closestPlayer = ob;
