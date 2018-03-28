@@ -41,18 +41,18 @@ public class EnemyTurn : MonoBehaviour {
         {
         C'est le moment où je pleure ma race
         }*/
-        Vector3 toTeleport = closestPlayer.GetComponent<MouvementPersonnage>().getPosPlayer() + Vector3.up;
-        transform.position = Vector3.MoveTowards(transform.position, toTeleport, Time.deltaTime * GetComponent<Ennemy>().getSpeed());    // Move there
+        Vector2 toTeleport = closestPlayer.GetComponent<MouvementPersonnage>().getPosPlayer() + Vector2.up;
+        transform.position = Vector2.MoveTowards(transform.position, toTeleport, Time.deltaTime * GetComponent<Ennemy>().getSpeed());    // Move there
     }
 
-    public GameObject[] whoCanIAttack(Vector3 actualPosition)
+    public GameObject[] whoCanIAttack(Vector2 actualPosition)
     {
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         GameObject[] possibleTargets = new GameObject[targetNumberEnemy()];
         int nbTargets = 0;
         foreach (GameObject ob in players)
         {
-            if ((Vector3.Distance(ob.GetComponent<Ennemy>().getPos(), actualPosition) <= GetComponent<Ennemy>().getRange() + GetComponent<Ennemy>().getPMEnemyMax()))
+            if ((Vector2.Distance(ob.GetComponent<Ennemy>().getPos(), actualPosition) <= GetComponent<Ennemy>().getRange() + GetComponent<Ennemy>().getPMEnemyMax()))
             {
                 possibleTargets[nbTargets] = ob;
                 nbTargets++;
@@ -61,13 +61,13 @@ public class EnemyTurn : MonoBehaviour {
         return possibleTargets;
     }
 
-    public GameObject closestTarget(Vector3 actualPosition)
+    public GameObject closestTarget(Vector2 actualPosition)
     {
         GameObject[] whoCanIAttackResult = whoCanIAttack(actualPosition);
         GameObject closestPlayer = whoCanIAttackResult[0];
         foreach(GameObject ob in whoCanIAttackResult)
         {
-            if((Vector3.Distance(ob.GetComponent<MouvementPersonnage>().getPosPlayer(), actualPosition) > Vector3.Distance(closestPlayer.GetComponent<MouvementPersonnage>().getPosPlayer(), actualPosition)))
+            if((Vector2.Distance(ob.GetComponent<MouvementPersonnage>().getPosPlayer(), actualPosition) > Vector2.Distance(closestPlayer.GetComponent<MouvementPersonnage>().getPosPlayer(), actualPosition)))
             {
                 closestPlayer = ob;
             }
@@ -75,13 +75,13 @@ public class EnemyTurn : MonoBehaviour {
         return closestPlayer;
     }
 
-    public bool isThereAPlayerToAttack(Vector3 actualPosition)
+    public bool isThereAPlayerToAttack(Vector2 actualPosition)
     {
         GameObject[] ennemies = GameObject.FindGameObjectsWithTag("Player");
 
         foreach (GameObject ob in ennemies)
         {
-            if ((Vector3.Distance(ob.GetComponent<MouvementPersonnage>().getPosPlayer(), actualPosition) <= GetComponent<Ennemy>().getRange() + GetComponent<Ennemy>().getPMEnemyMax()))
+            if ((Vector2.Distance(ob.GetComponent<MouvementPersonnage>().getPosPlayer(), actualPosition) <= GetComponent<Ennemy>().getRange() + GetComponent<Ennemy>().getPMEnemyMax()))
             {
                 return true;
             }
