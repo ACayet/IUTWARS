@@ -6,7 +6,6 @@ using UnityEngine;
 public class Inventory : MonoBehaviour {
     public int slotsX, slotsY;
     public List<Item> inventory = new List<Item>();
-    public List<Item> slots = new List<Item>();
     private ItemDatabase database;
     private bool showInventory;
     public GUISkin skin;
@@ -17,19 +16,19 @@ public class Inventory : MonoBehaviour {
     private int prevIndex;
 
     // Use this for initialization
-    void Start () {
-        for(int k = 0; k < (slotsX * slotsY); k++)
-        {
-            slots.Add(new Item());
-            inventory.Add(new Item());
-        }
-        database = GameObject.FindGameObjectWithTag("ItemDatabase").GetComponent<ItemDatabase>();
+    void Start () {     
         for(int a = 0; a < (slotsX * slotsY); a++)
         {
-            AddItem(a);
+            inventory.Add(new Item());
+
+        }
+        database = GameObject.FindGameObjectWithTag("ItemDatabase").GetComponent<ItemDatabase>();
+        for (int b = 0; b <(slotsX * slotsY); b++)
+        {
+            AddItem(b);
         }
         //RemoveItem(0);
-        print(InventoryContains(1));
+
     }
 
     private void Update()
@@ -78,20 +77,20 @@ public class Inventory : MonoBehaviour {
             {
                 Rect slotRect = new Rect(x * 60, y * 60, 50, 50);
                 GUI.Box(slotRect, "", skin.GetStyle("Slot"));
-                slots[i] = inventory[i];
-                Item item = slots[i];
-                if (slots[i].itemName != null)
+                Item item = inventory[i];
+                
+                if (inventory[i].itemName != null)
                 {
-                    GUI.DrawTexture(slotRect, slots[i].itemIcon);
+                    GUI.DrawTexture(slotRect, inventory[i].itemIcon);
                     if (slotRect.Contains(e.mousePosition))
                     {
-                        tooltip = CreateTooltip(slots[i]);
+                        tooltip = CreateTooltip(inventory[i]);
                         showTooltip = true;
                         if (e.button == 0 && e.type == EventType.MouseDrag && !draggingItem)
                         {
                             draggingItem = true;
                             prevIndex = i;
-                            draggedItem = slots[i];
+                            draggedItem = inventory[i];
                             inventory[i] = new Item();
                         }
                         if (e.type == EventType.MouseUp && draggingItem)
@@ -102,10 +101,10 @@ public class Inventory : MonoBehaviour {
                             draggedItem = null;
                         }
                         if (e.isMouse && e.type == EventType.MouseDown && e.button == 1)
-                        {
+                        {                          
                             if (item.itemType == Item.ItemType.Consumable)
                             {
-                                UseConsumable(slots[i], i, true);
+                                UseConsumable(inventory[i], i, true);
                             }
                         }
                     }
@@ -143,6 +142,12 @@ public class Inventory : MonoBehaviour {
         {
             if(inventory[i].itemName == null)
             {
+                if (id < 0)
+                {
+                    print("Meh");
+                    inventory[i] = new Item();
+                    break;
+                }
                 for(int j = 0; j<database.items.Count; j++)
                 {
                     if (database.items[j].itemID == id)
@@ -210,7 +215,7 @@ public class Inventory : MonoBehaviour {
     {
         for(int i = 0; i < inventory.Count; i++)
         {
-            inventory[i] = PlayerPrefs.GetInt("Inventory" + i, -1) > 0 ? database.items[PlayerPrefs.GetInt("Inventory" + i)] : new Item();
+            inventory[i] = PlayerPrefs.GetInt("Inventory" + i, -1) >= 0 ? database.items[PlayerPrefs.GetInt("Inventory" + i)] : new Item();
         }
     }
 }
