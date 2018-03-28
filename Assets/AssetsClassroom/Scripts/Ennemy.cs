@@ -40,7 +40,7 @@ public class Ennemy : Character
         return portéeEnemy;
     }
 
-    public void modifPos(Vector2 vectorAdd)
+    public void modifPos(Vector3 vectorAdd)
     {
         EnemyPosition = EnemyPosition + vectorAdd;
     }
