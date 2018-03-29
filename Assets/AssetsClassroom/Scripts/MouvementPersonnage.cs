@@ -5,10 +5,10 @@ using UnityEngine;
 [System.Serializable]
 public class MouvementPersonnage : Character
 {
-    Vector3 posPlayer;                                // For movement
+    public Vector3 posPlayer;                                // For movement
     float speedPlayer;                         // Speed of movement
     public int PMPlayer;
-    bool isSelected;
+    public bool isSelected;
     public int PMPlayerMax;
 
     // Use this for initialization
@@ -88,6 +88,7 @@ public class MouvementPersonnage : Character
             }  
             
             transform.position = Vector3.MoveTowards(transform.position, posPlayer, Time.deltaTime * speedPlayer);    // Move there
+            //Debug.Log(posPlayer.ToString());
         }   
     }  
 }
