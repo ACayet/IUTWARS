@@ -8,7 +8,7 @@ using System;
 
 public class DataController : MonoBehaviour
 {
-    GameData data = new GameData();
+    GameData data;
     public Text LoadData;
 
     private static string gameDataFileName;
@@ -16,6 +16,8 @@ public class DataController : MonoBehaviour
 
     void Start()
     {
+        data = new GameData();
+
         //SaveGameData();
 
         //LoadGameData();

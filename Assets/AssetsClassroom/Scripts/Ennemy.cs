@@ -10,7 +10,7 @@ public class Ennemy : Character
     public int AttackEnemy;
     public int DefenseEnemy;
     public int portéeEnemy;
-    Vector3 EnemyPosition;
+    public Vector3 EnemyPosition;
     public int PAEnemy;
     public int PAEnemyMax;
     public int PMEnemy;
