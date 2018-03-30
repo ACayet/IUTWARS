@@ -10,13 +10,13 @@ public class MouvementPersonnage : Character
     public int PMPlayer;
     public bool isSelected;
     public int PMPlayerMax;
-
+    Vector3 lastWalk;
     // Use this for initialization
     void Start()
     {
         posPlayer = transform.position; // Take the initial position
         speedPlayer = 2.0f;                        // Speed of movement
-
+        lastWalk = transform.position;
         setPMtotheMax();                    
         isSelected = false;
     }
@@ -62,33 +62,44 @@ public class MouvementPersonnage : Character
                 posPlayer += Vector3.left;
 
                 GetComponent<Animator>().Play("WalkingLeft");
-                
-                PMPlayer = PMPlayer - 1;
+                Mouvement(posPlayer);
+                //PMPlayer = PMPlayer - 1;
             }
             if (Input.GetKey(KeyCode.D) && transform.position == posPlayer)
             {        // Right
                 posPlayer += Vector3.right;
                 GetComponent<Animator>().Play("WalkingRight");
-                
-                PMPlayer = PMPlayer - 1;
+                Mouvement(posPlayer);
+                //PMPlayer = PMPlayer - 1;
             }
             if (Input.GetKey(KeyCode.Z) && transform.position == posPlayer)
             {        // Up
                 posPlayer += Vector3.up;
                 GetComponent<Animator>().Play("WalkingUp");
-                
-                PMPlayer = PMPlayer - 1;
+                Mouvement(posPlayer);
+                //PMPlayer = PMPlayer - 1;
             }
             if (Input.GetKey(KeyCode.S) && transform.position == posPlayer)
             {        // Down
                 posPlayer += Vector3.down;
                 GetComponent<Animator>().Play("WalkingDown");
-                
-                PMPlayer = PMPlayer - 1;
-            }  
-            
-            transform.position = Vector3.MoveTowards(transform.position, posPlayer, Time.deltaTime * speedPlayer);    // Move there
+                Mouvement(posPlayer);
+                //PMPlayer = PMPlayer - 1;
+            }
+            //Mouvement(posPlayer);
+            transform.position = Vector3.MoveTowards(transform.position, lastWalk, Time.deltaTime * speedPlayer);    // Move there
             //Debug.Log(posPlayer.ToString());
         }   
-    }  
+    }
+    
+    void Mouvement(Vector3 dpl)
+    {
+        if (GameObject.FindGameObjectWithTag("MapGenerator").GetComponent<FightMapGenerator>().canWalk(dpl))
+        {
+            PMPlayer = PMPlayer - 1;
+            //transform.position = Vector3.MoveTowards(transform.position, dpl, Time.deltaTime * speedPlayer);
+            lastWalk = dpl;
+            Debug.Log("Let's walk");
+        }
+    }
 }

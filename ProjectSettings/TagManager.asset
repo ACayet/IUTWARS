@@ -7,6 +7,8 @@ TagManager:
   - Ennemy
   - ItemDatabase
   - Obstacle
+  - MapGenerator
+  - WalkableCase
   layers:
   - Default
   - TransparentFX
