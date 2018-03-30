@@ -26,6 +26,7 @@ public class Inventory : MonoBehaviour {
         for (int b = 0; b <(slotsX * slotsY); b++)
         {
             AddItem(b);
+            VerifTrophy(b);
         }
         //RemoveItem(0);
 
@@ -132,7 +133,7 @@ public class Inventory : MonoBehaviour {
 
     string CreateTooltip(Item item)
     {
-        tooltip = "<color=#ffffff>" + item.itemName + "\n\n" + item.itemDesc + "\n\n" + item.statUtil + "</color>";
+        tooltip = "<color=#ffffff>" + item.itemName + "\n\n" + item.itemDesc + "\n\n" + item.itemPower + "</color>";
         return tooltip;
     }
 
@@ -144,7 +145,6 @@ public class Inventory : MonoBehaviour {
             {
                 if (id < 0)
                 {
-                    print("Meh");
                     inventory[i] = new Item();
                     break;
                 }
@@ -157,6 +157,14 @@ public class Inventory : MonoBehaviour {
                 }
                 break;
             }
+        }
+    }
+
+    void VerifTrophy(int id)
+    {
+        if (inventory[id].itemType == Item.ItemType.Trophy)
+        {
+            
         }
     }
 
