@@ -5,9 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
-    DataController dataC = new DataController();
+    DataController dataC;
     GameData loadData;
     public string Scene_to_load;
+
+    private void Start()
+    {
+        dataC = new DataController();
+    }
 
     public void PlayNewGame()
     {
@@ -19,6 +24,7 @@ public class MainMenu : MonoBehaviour {
     {
         loadData = dataC.LoadGameData();
         SceneManager.LoadScene(loadData.CurentScene);
+        GameObject instance = Instantiate(Resources.Load("Personnage", typeof(GameObject))) as GameObject;
     }
 
     public void QuitGame()
