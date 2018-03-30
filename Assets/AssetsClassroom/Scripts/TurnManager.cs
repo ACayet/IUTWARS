@@ -22,16 +22,25 @@ public class TurnManager : MonoBehaviour {
         {
             //Debug.Log("Enemy turn");
             turnChange();
-            foreach (GameObject ob in ennemies)
-            {
-                ob.GetComponent<EnemyTurn>().AttackTime();
+            
+                StartCoroutine(DelayEnemyTurn(ennemies));
 
-            }
+            
             turnChange();
             nbTurn++;
         }
         
 	}
+
+    private IEnumerator DelayEnemyTurn(GameObject[] Enemy)
+    {
+        
+        foreach(GameObject ob in Enemy)
+        {
+            ob.GetComponent<EnemyTurn>().AttackTime();
+            yield return new WaitForSeconds(2f);
+        }
+    }
 
     bool checkStillPlayerTurn()
     {

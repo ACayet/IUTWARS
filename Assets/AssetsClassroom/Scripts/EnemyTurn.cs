@@ -21,11 +21,9 @@ public class EnemyTurn : MonoBehaviour {
             GameObject closestPlayer = closestTarget(GetComponent<Ennemy>().getPos());
             Debug.Log(GetComponent<Ennemy>().getPos().ToString());
            
-            if (!checkIfCaseOccupied(closestPlayer))
-            {
-                
+               
                 moveToClosestPlayer(closestPlayer);
-            }
+            
         }
         
     }
@@ -56,54 +54,20 @@ public class EnemyTurn : MonoBehaviour {
 
         Vector3 toTeleportCalc = closestPlayer.GetComponent<MouvementPersonnage>().getPosPlayer() + Vector3.up;
         Vector3 toTeleport =  toTeleportCalc - GetComponent<Ennemy>().getPos();
-        if (!checkIfCaseOccupied(closestPlayer))
+        GetComponent<Animator>().Play("WalkingDown");
+            
+        //transform.position = Vector3.MoveTowards(transform.position, GetComponent<Ennemy>().getPos(), Time.deltaTime * GetComponent<Ennemy>().getSpeed());    // Move there
+        if (GameObject.FindGameObjectWithTag("MapGenerator").GetComponent<FightMapGenerator>().canWalk(toTeleportCalc))
         {
-            GetComponent<Animator>().Play("WalkingDown");
-            Debug.Log(toTeleport.ToString());
-            Debug.Log(closestPlayer.GetComponent<MouvementPersonnage>().getPosPlayer().ToString());
+            Debug.Log("Enemy can move");
             GetComponent<Ennemy>().modifPos(toTeleport);
-            //transform.position = Vector3.MoveTowards(transform.position, GetComponent<Ennemy>().getPos(), Time.deltaTime * GetComponent<Ennemy>().getSpeed());    // Move there
             transform.Translate(toTeleport);
         }
-    }
+        if (!GameObject.FindGameObjectWithTag("MapGenerator").GetComponent<FightMapGenerator>().canWalk(toTeleportCalc))
+        {
+            Debug.Log("Enemy can't move");
+        }
 
-    bool checkIfCaseOccupied(GameObject Target)
-    {
-        /* float radius = 0f;
-         if (Physics.CheckSphere(vector, radius)){
-             Debug.Log("There's something here");
-             return true;
-         }
-         else return false;*/
-       /* GameObject[] enemies = GameObject.FindGameObjectsWithTag("Ennemy");
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-        foreach(GameObject ob in enemies)
-        {
-            if(ob.GetComponent<Ennemy>().getPos() == (GetComponent<Ennemy>().getPos() + vector))
-            {
-                Debug.Log("Ally found if move of " + vector.ToString());
-                return true;
-            }
-            
-        }
-        foreach (GameObject ob in players)
-        {
-            if (ob.GetComponent<MouvementPersonnage>().getPosPlayer() == (GetComponent<Ennemy>().getPos() + vector))
-            {
-                Debug.Log("Target found if move of " + vector.ToString());
-                return true;
-            }
-
-        }
-        return false;*/
-        var hitColliders = Physics.OverlapSphere((Target.GetComponent<MouvementPersonnage>().getPosPlayer()), 1,5);//1 is purely chosen arbitrarly
-        if (hitColliders.Length > 0)
-        {
-            Debug.Log("Can't move, found something");
-            return true;
-        }
-        Debug.Log("Can move, found nothing");
-        return false;
     }
 
     public List<GameObject> whoCanIAttack(Vector3 actualPosition)
@@ -146,10 +110,12 @@ public class EnemyTurn : MonoBehaviour {
                 {
                     Vector3 toTeleportCalc = ob.GetComponent<MouvementPersonnage>().getPosPlayer() + Vector3.up;
                     Vector3 toTeleport = toTeleportCalc - GetComponent<Ennemy>().getPos();
-                    if (!checkIfCaseOccupied(ob))
+                    if (GameObject.FindGameObjectWithTag("MapGenerator").GetComponent<FightMapGenerator>().canWalk(toTeleportCalc))
                     {
                         closestPlayer = ob;
                     }
+                   
+                    
                 }
         }
         return closestPlayer;
