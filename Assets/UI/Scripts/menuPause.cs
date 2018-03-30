@@ -4,47 +4,35 @@ using UnityEngine;
 
 public class menuPause : MonoBehaviour {
 
-    public static bool GameIsPaused = true;
+    public static bool GameIsPaused = false;
     public GameObject MenuPauseUI;
 
 
         // Update is called once per frame
         void Update () {
-
-        if (GameIsPaused == true)
+        if (Input.GetKey(KeyCode.Escape))
         {
-            Resume();
-        }
-        else
-        {
-            Pause();
-        }
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            TooglePause();
+            if (GameIsPaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
         }
 	}
 
-    void TooglePause()
-    {
-        Debug.Log("inversion de GameIsPaused");
-        Debug.Log(GameIsPaused + " --> " + !GameIsPaused);
-        GameIsPaused = !GameIsPaused;
-    }
     void Resume()
     {
-        Debug.Log("Appel de Resume()");
         MenuPauseUI.SetActive(false);
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        Time.timeScale =1;
+        //Time.timeScale =1f;
+        GameIsPaused = false;
     }
     void Pause()
     {
-        Debug.Log("Appel de Pause()");
         MenuPauseUI.SetActive(true);
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.Confined;
-        Time.timeScale = 0;
+        //Time.timeScale = 0f;
+        GameIsPaused = true;
     }
 }
