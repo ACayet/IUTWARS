@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour {
 
+    public Text TextDialogue;
+    public Text TextNom;
     public Queue<string> phrases;
 
+    public Animator animator;
 
 	// Use this for initialization
 	void Start () {
@@ -13,13 +16,15 @@ public class DialogueManager : MonoBehaviour {
 	}
     public void StartDialogue(Dialogue dialogue)
     {
+        animator.SetBool("IsOpen", true);
+        TextNom.text = dialogue.nom;
         Debug.Log("Starting conversation with " + dialogue.nom);
         phrases.Clear();
         foreach (string phrase in dialogue.phrases)
         {
             phrases.Enqueue(phrase);
         }
-        
+        DisplayNextSentence();
     }
     public void DisplayNextSentence()
     {
@@ -29,10 +34,11 @@ public class DialogueManager : MonoBehaviour {
             return;
         }
         string phrase = phrases.Dequeue();
-        Debug.Log(phrase);
+        TextDialogue.text = phrase;
     }
     public void EndDialogue()
     {
+        animator.SetBool("IsOpen", false);
         Debug.Log("Fin de la conversation.");
     }
 }

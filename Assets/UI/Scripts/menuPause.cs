@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class menuPause : MonoBehaviour {
 
-    public static bool GameIsPaused = true;
+    public static bool GameIsPaused;
     public GameObject MenuPauseUI;
 
-
+    void Start()
+    {
+        GameIsPaused = false;
+    }
         // Update is called once per frame
-        void Update () {
+    void Update () {
 
-        if (GameIsPaused == true)
+        if (GameIsPaused) // si le jeu 
         {
             Resume();
         }
@@ -35,8 +38,8 @@ public class menuPause : MonoBehaviour {
     {
         Debug.Log("Appel de Resume()");
         MenuPauseUI.SetActive(false);
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         Time.timeScale =1;
     }
     void Pause()
