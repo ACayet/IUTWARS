@@ -132,7 +132,7 @@ public class Inventory : MonoBehaviour {
 
     string CreateTooltip(Item item)
     {
-        tooltip = "<color=#ffffff>" + item.itemName + "\n\n" + item.itemDesc + "\n\n" + item.itemPower + "</color>";
+        tooltip = "<color=#ffffff>" + item.itemName + "\n\n" + item.itemDesc + "\n\n" + item.statUtil + "</color>";
         return tooltip;
     }
 

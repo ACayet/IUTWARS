@@ -8,7 +8,7 @@ public class Item {
     public int itemID;
     public string itemDesc;
     public Texture2D itemIcon;
-    public int itemPower;
+    public int statUtil;
     public ItemType itemType;
 
     public enum ItemType
@@ -18,13 +18,13 @@ public class Item {
         Important
     }
 
-    public Item(string name, int id, string desc, int power, ItemType type)
+    public Item(string name, int id, string desc, int util, ItemType type)
     {
         itemName = name;
         itemID = id;
         itemIcon = Resources.Load<Texture2D>("Item Icons/" + name);
         itemDesc = desc;
-        itemPower = power;
+        statUtil = util;
         itemType = type;
     }
 
