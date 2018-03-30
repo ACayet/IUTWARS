@@ -2,15 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DontDestroyOnLoad : MonoBehaviour
-{
+public class DontDestroyOnLoad : MonoBehaviour {
 
-    // Use this for initialization
+	// Use this for initialization
+	void Start () {
 
-    void Awake()
-    {
-        DontDestroyOnLoad(this.gameObject);
+        GameObject gameObject = GameObject.FindWithTag("Player");
+
+
+        DontDestroyOnLoad(gameObject);
+
     }
+	
+	
 }
-
-    

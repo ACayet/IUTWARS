@@ -20,7 +20,7 @@ public class TurnManager : MonoBehaviour {
 	void Update () {
         if (!checkStillPlayerTurn() && turn == "Player")
         {
-            //Debug.Log("Enemy turn");
+            Debug.Log("Enemy turn");
             turnChange();
             foreach (GameObject ob in ennemies)
             {
@@ -40,7 +40,7 @@ public class TurnManager : MonoBehaviour {
             
             if (ob.GetComponent<CombatJoueur>().getPAPlayer() != 0)
             {
-                //Debug.Log("Player still have Action Points left");
+                Debug.Log("Player still have Action Points left");
                 return true;
             }
         }
@@ -58,7 +58,7 @@ public class TurnManager : MonoBehaviour {
         if(turn == "Player")
         {
             turn = "Enemy";
-          //  cutCharacterSelect();
+            cutCharacterSelect();
             refreshEnnemies();
         }
         if(turn == "Enemy")
