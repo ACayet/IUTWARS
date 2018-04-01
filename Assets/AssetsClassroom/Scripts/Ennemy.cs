@@ -45,6 +45,11 @@ public class Ennemy : Character
         EnemyPosition = EnemyPosition + vectorAdd;
     }
 
+    internal int getAttackEnemy()
+    {
+        return AttackEnemy;
+    }
+
     // Update is called once per frame
     void Update()
     {

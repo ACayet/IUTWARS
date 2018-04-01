@@ -22,6 +22,11 @@ public class CombatJoueur : MonoBehaviour {
 		
 	}
    
+    public void getAttacked(int AttackOfTheEnemy)
+    {
+        HPPlayer = HPPlayer - (AttackOfTheEnemy - DefensePlayer);
+    }
+
     public void setPAPlayertotheMax()
     {
         PAPlayer = PAPlayerMax;

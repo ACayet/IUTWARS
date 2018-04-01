@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,13 +20,21 @@ public class EnemyTurn : MonoBehaviour {
         if (isThereAPlayerToAttack(GetComponent<Ennemy>().getPos()))
         {
             GameObject closestPlayer = closestTarget(GetComponent<Ennemy>().getPos());
-            Debug.Log(GetComponent<Ennemy>().getPos().ToString());
-           
-               
-                moveToClosestPlayer(closestPlayer);
+            Debug.Log(GetComponent<Ennemy>().getPos().ToString());               
+            bool check = moveToClosestPlayer(closestPlayer);
+            if (check)
+            {
+                attackPlayer(closestPlayer);
+            }
             
         }
         
+    }
+
+    private void attackPlayer(GameObject closestPlayer)
+    {
+        closestPlayer.GetComponent<CombatJoueur>().getAttacked(GetComponent<Ennemy>().getAttackEnemy());
+        Debug.Log("A player got attacked");
     }
 
     void moveIfNoCloseTargets()
@@ -44,7 +53,7 @@ public class EnemyTurn : MonoBehaviour {
         return targetNb;
     }
 
-    void moveToClosestPlayer(GameObject closestPlayer)
+    bool moveToClosestPlayer(GameObject closestPlayer)
     {
         /*bool travelEnd = false;
         while (!travelEnd)
@@ -62,11 +71,14 @@ public class EnemyTurn : MonoBehaviour {
             Debug.Log("Enemy can move");
             GetComponent<Ennemy>().modifPos(toTeleport);
             transform.Translate(toTeleport);
+            return true;
         }
         if (!GameObject.FindGameObjectWithTag("MapGenerator").GetComponent<FightMapGenerator>().canWalk(toTeleportCalc))
         {
             Debug.Log("Enemy can't move");
+            return false;
         }
+        return false;
 
     }
 
