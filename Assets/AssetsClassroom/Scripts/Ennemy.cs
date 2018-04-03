@@ -7,6 +7,7 @@ public class Ennemy : Character
 {
 
     public int HPEnemy;
+    public int HPEnemyMax;
     public int AttackEnemy;
     public int DefenseEnemy;
     public int portéeEnemy;
@@ -23,7 +24,29 @@ public class Ennemy : Character
         EnemyPosition = transform.position;
         setPAEnemytotheMax();
         setPMEnemytotheMax();
+        setHPEnemytotheMax();
     }
+
+    private void setHPEnemytotheMax()
+    {
+        HPEnemy = HPEnemyMax;
+    }
+
+    public int getPMEnemy()
+    {
+        return PMEnemy;
+    }
+
+    public void reducePM()
+    {
+        PMEnemy = PMEnemy - 1;
+    }
+
+    public void reducePA()
+    {
+        PAEnemy = PAEnemy - 1;
+    }
+
 
     public int getPAEnemy()
     {
@@ -59,10 +82,11 @@ public class Ennemy : Character
             EnemyPosition += 100 * Vector3.up;
             //GetComponent<Animator>().SetTrigger("StandDown");
             GetComponent<Animator>().SetTrigger("WalkDown");
+            Destroy(GetComponent<SpriteRenderer>());
             transform.position = Vector3.MoveTowards(transform.position, EnemyPosition, Time.deltaTime * speedEnemy);
-
-            //Destroy(this);
-
+            GameObject.FindGameObjectWithTag("FightManager").GetComponent<TurnManager>().reloadLists();
+            Destroy(gameObject);
+            
         }
     }
 

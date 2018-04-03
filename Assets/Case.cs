@@ -52,7 +52,6 @@ public class Case : MonoBehaviour {
         {
             if((here - new Vector3(0.0f, 0.5f, 0.0f)) == ob.GetComponent<MouvementPersonnage>().getPosPlayer())
             {
-                Debug.Log("Found a player at " + CoordX + " " + CoordY);
                 return ob;
             }
 
@@ -61,7 +60,6 @@ public class Case : MonoBehaviour {
         {
             if (here - new Vector3(0.0f, 0.5f, 0.0f) == ob.GetComponent<Ennemy>().getPos())
             {
-                Debug.Log("Found a target at " + CoordX + " " + CoordY);
                 return ob;
             }
 

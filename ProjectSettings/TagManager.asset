@@ -9,6 +9,7 @@ TagManager:
   - Obstacle
   - MapGenerator
   - WalkableCase
+  - FightManager
   layers:
   - Default
   - TransparentFX

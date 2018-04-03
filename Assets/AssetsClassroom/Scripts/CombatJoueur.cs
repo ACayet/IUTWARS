@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CombatJoueur : MonoBehaviour {
 
     public int HPPlayer;
+    public int HPPlayerMax;
     public int AttackPlayer;
     public int DefensePlayer;
     public int portéePlayer;
@@ -15,10 +17,16 @@ public class CombatJoueur : MonoBehaviour {
     // Use this for initialization
     void Start () {
         setPAPlayertotheMax();
+        setHPTotheMax();
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    private void setHPTotheMax()
+    {
+        HPPlayer = HPPlayerMax;
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
    
@@ -54,13 +62,13 @@ public class CombatJoueur : MonoBehaviour {
 
     public void AttackTarget(GameObject theTarget)
     {
-        Debug.Log("Attack initiated");
+        //Debug.Log("Attack initiated");
         if (isThereAnEnnemyToAttack(transform.position) && PAPlayer > 0)
         {
-            Debug.Log("Target found");
+            //Debug.Log("Target found");
             if (canIAttackThis(theTarget, whoCanIAttack(transform.position)))
             {
-                Debug.Log("JOHN CENA");
+                //Debug.Log("JOHN CENA");
                 theTarget.GetComponent<Ennemy>().getDamaged(AttackPlayer);
                 PAPlayer = PAPlayer - 1;
             }
@@ -105,7 +113,7 @@ public class CombatJoueur : MonoBehaviour {
 
         foreach (GameObject ob in ennemies)
         {
-            Debug.Log(Vector3.Distance(ob.GetComponent<Ennemy>().getPos(), actualPosition).ToString() + " VS " + portéePlayer);
+           // Debug.Log(Vector3.Distance(ob.GetComponent<Ennemy>().getPos(), actualPosition).ToString() + " VS " + portéePlayer);
             if ((Vector3.Distance(ob.GetComponent<Ennemy>().getPos(), actualPosition) <= portéePlayer))
             {
                 

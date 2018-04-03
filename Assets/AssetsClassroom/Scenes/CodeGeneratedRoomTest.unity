@@ -152,6 +152,26 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114331143545415634, guid: 4bdec39a6602f91459207cefc1b424ee,
+        type: 2}
+      propertyPath: HPPlayer
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114331143545415634, guid: 4bdec39a6602f91459207cefc1b424ee,
+        type: 2}
+      propertyPath: DefensePlayer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114331143545415634, guid: 4bdec39a6602f91459207cefc1b424ee,
+        type: 2}
+      propertyPath: HPPlayerMax
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114331143545415634, guid: 4bdec39a6602f91459207cefc1b424ee,
+        type: 2}
+      propertyPath: AttackPlayer
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4bdec39a6602f91459207cefc1b424ee, type: 2}
   m_IsPrefabParent: 0
@@ -363,6 +383,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1134783445306184, guid: 84363d656dde35a4f9d6315027fb86d9, type: 2}
+      propertyPath: m_TagString
+      value: FightManager
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 84363d656dde35a4f9d6315027fb86d9, type: 2}
   m_IsPrefabParent: 0
@@ -453,6 +477,21 @@ Prefab:
         type: 2}
       propertyPath: m_Size.y
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114933191957110896, guid: 770596a493ac26948b4b1b250a81494c,
+        type: 2}
+      propertyPath: AttackEnemy
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114933191957110896, guid: 770596a493ac26948b4b1b250a81494c,
+        type: 2}
+      propertyPath: HPEnemyMax
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114933191957110896, guid: 770596a493ac26948b4b1b250a81494c,
+        type: 2}
+      propertyPath: HPEnemy
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 770596a493ac26948b4b1b250a81494c, type: 2}
@@ -648,6 +687,26 @@ Prefab:
       propertyPath: m_Name
       value: PersonnageAntoine (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 114331143545415634, guid: 4bdec39a6602f91459207cefc1b424ee,
+        type: 2}
+      propertyPath: HPPlayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114331143545415634, guid: 4bdec39a6602f91459207cefc1b424ee,
+        type: 2}
+      propertyPath: DefensePlayer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114331143545415634, guid: 4bdec39a6602f91459207cefc1b424ee,
+        type: 2}
+      propertyPath: HPPlayerMax
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 114331143545415634, guid: 4bdec39a6602f91459207cefc1b424ee,
+        type: 2}
+      propertyPath: AttackPlayer
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4bdec39a6602f91459207cefc1b424ee, type: 2}
   m_IsPrefabParent: 0
@@ -785,6 +844,21 @@ Prefab:
     - target: {fileID: 1769778173536868, guid: 770596a493ac26948b4b1b250a81494c, type: 2}
       propertyPath: m_Name
       value: Target (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114933191957110896, guid: 770596a493ac26948b4b1b250a81494c,
+        type: 2}
+      propertyPath: AttackEnemy
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114933191957110896, guid: 770596a493ac26948b4b1b250a81494c,
+        type: 2}
+      propertyPath: HPEnemy
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114933191957110896, guid: 770596a493ac26948b4b1b250a81494c,
+        type: 2}
+      propertyPath: HPEnemyMax
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 770596a493ac26948b4b1b250a81494c, type: 2}

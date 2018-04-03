@@ -26,6 +26,11 @@ public class MouvementPersonnage : Character
         PMPlayer = PMPlayerMax;
     }
 
+    public int getPM()
+    {
+        return PMPlayer;
+    }
+
     public float getSpeedPlayer()
     {
         return speedPlayer;
@@ -99,7 +104,7 @@ public class MouvementPersonnage : Character
             PMPlayer = PMPlayer - 1;
             //transform.position = Vector3.MoveTowards(transform.position, dpl, Time.deltaTime * speedPlayer);
             lastWalk = dpl;
-            Debug.Log("Let's walk");
+            
         }
     }
 }

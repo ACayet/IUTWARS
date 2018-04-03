@@ -29,13 +29,12 @@ public class ClickManager : MonoBehaviour
             Vector2 mousePos2D = new Vector2(mousePos.x, mousePos.y);
 
             RaycastHit2D hit = Physics2D.Raycast(mousePos2D, Vector2.zero);
-            //Debug.Log("Mouse Clicked at " + mousePos.x + " " + mousePos.y);
+            Debug.Log("Mouse Clicked at " + mousePos.x + " " + mousePos.y);
             if (hit.collider != null)
             {
-                Debug.Log("Something with the tag " + hit.collider.tag + " was clicked! at " + mousePos.x + " " + mousePos.y);
                 //hit.collider.attachedRigidbody.AddForce(Vector2.up);
                 currentClicked = hit.collider.gameObject;
-                Debug.Log(currentClicked.tag);
+              
                 
                 if (hit.collider.tag == "Ennemy")
                 {
