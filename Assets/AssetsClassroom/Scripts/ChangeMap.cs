@@ -21,6 +21,7 @@ public class ChangeMap : MonoBehaviour
         {
             SceneManager.LoadScene(SceneNameToLoad);
             dataC.SaveGameData(SceneNameToLoad);
+            
         }
     }
 

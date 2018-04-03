@@ -9,7 +9,7 @@ using System;
 public class DataController : MonoBehaviour
 {
     GameData data;
-    public Text LoadData;
+    //public Text LoadData;
 
     private static string gameDataFileName;
     private string gameDataProjectFilePath;
@@ -21,10 +21,10 @@ public class DataController : MonoBehaviour
         //SaveGameData();
 
         //LoadGameData();
-        LoadData = GameObject.Find("DataLoad").GetComponent<Text>();
+        //LoadData = GameObject.Find("DataLoad").GetComponent<Text>();
         gameDataFileName = "data.save";
         gameDataProjectFilePath = "/StreamingAssets/" + gameDataFileName;
-        LoadData.text = "Commence par créer une nouvelle partie ";
+        //LoadData.text = "Commence par créer une nouvelle partie ";
     }
 
     public GameData LoadGameData()
@@ -51,12 +51,6 @@ public class DataController : MonoBehaviour
     {
         Debug.Log("Data save in "+ Application.dataPath + gameDataProjectFilePath);
         GameData data = new GameData();
-        data.AttackPlayer = 5;
-        data.HPPlayer = 5;
-        data.PAPlayer = 5;
-        data.PMPlayer = 5;
-        data.DefensePlayer = 5;
-        data.portéePlayer = 2;
         data.CurentScene = SceneNameToLoad;
 
         DataManager.Save(data, gameDataFileName);

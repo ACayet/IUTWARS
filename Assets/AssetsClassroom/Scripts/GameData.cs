@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 [Serializable]
 public class GameData {
 
-    
+
     public int HPPlayer;
     public int AttackPlayer;
     public int DefensePlayer;
@@ -16,4 +16,17 @@ public class GameData {
     public int PMPlayer;
     public int PAPlayer;
     public string CurentScene;
+    public string PreviousScene;
+
+    public GameData()
+    {
+        HPPlayer = 100;
+        AttackPlayer = 5;
+        DefensePlayer = 0;
+        portéePlayer = 1;
+        PMPlayer = 10;
+        PAPlayer = 3;
+        CurentScene = "";
+        PreviousScene = "";
+    }
 }

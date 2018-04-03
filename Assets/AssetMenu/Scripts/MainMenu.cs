@@ -23,8 +23,9 @@ public class MainMenu : MonoBehaviour {
     public void ContinuGame()
     {
         loadData = dataC.LoadGameData();
+        loadData.PreviousScene = "MainMenu";
+        SceneManager.LoadScene("Couloir_Carte");
         SceneManager.LoadScene(loadData.CurentScene);
-        GameObject instance = Instantiate(Resources.Load("Personnage", typeof(GameObject))) as GameObject;
     }
 
     public void QuitGame()
