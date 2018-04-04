@@ -14,8 +14,7 @@ public class Inventory : MonoBehaviour {
     private bool draggingItem;
     private Item draggedItem;
     private int prevIndex;
-    private Rect d;
-    private Rect e;
+  
     // Use this for initialization
     void Start () {     
         for(int a = 0; a < (slotsX * slotsY); a++)
@@ -30,8 +29,7 @@ public class Inventory : MonoBehaviour {
             VerifTrophy(b);
         }
         //RemoveItem(0);
-        d = new Rect(730, 250, 100, 40);
-        e = new Rect(730, 300, 100, 40);
+        
     }
 
     private void Update()
@@ -70,7 +68,7 @@ public class Inventory : MonoBehaviour {
         {
             for(int x = 0; x < slotsX; x++)
             {
-                Rect slotRect = new Rect(665 + x * 60, y * 60, 50, 50);
+                Rect slotRect = new Rect(950 + x * 60, y * 60, 50, 50);
                 GUI.Box(slotRect, "", skin.GetStyle("Slot"));
                 Item item = inventory[i];
                 

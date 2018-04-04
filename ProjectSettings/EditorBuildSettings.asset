@@ -12,8 +12,8 @@ EditorBuildSettings:
     path: Assets/AssetsClassroom/Scenes/CartePrincipale.unity
     guid: 447b43c93b7cce64fbd8e242e4fe1cb6
   - enabled: 1
-    path: Assets/AssetsClassroom/Scenes/TestFight.unity
-    guid: 8f6667672a7686643a590234501c5319
+    path: Assets/AssetsClassroom/Scenes/CodeGeneratedRoomTest.unity
+    guid: 6d2a127ba4db00a449af5284d0294b6b
   - enabled: 1
     path: Assets/AssetsClassroom/Scenes/Couloir_Carte.unity
     guid: 80338b0c882431d4088850d42c97e4ae
