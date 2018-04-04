@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 222382995149574674}
   - component: {fileID: 114117451556148902}
   - component: {fileID: 114072216985704684}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: LabelPM
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 222050729509723782}
   - component: {fileID: 114355822142975622}
   - component: {fileID: 114045392845519766}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: LabelPV
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 222554470596619844}
   - component: {fileID: 114223823764263562}
   - component: {fileID: 114836132725980220}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: LabelPA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -235,7 +235,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4404555058495660}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Texte
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -677,8 +677,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7c5fbcf904044544ae3e8e6a00fe6a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxPA: 25
-  PA: 5
+  maxPA: 2
+  PA: 2
   minFill: 0.094
   fillAmount: 0
   content: {fileID: 114281964331358418}
@@ -807,7 +807,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0.094
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
 --- !u!114 &114328770837646002

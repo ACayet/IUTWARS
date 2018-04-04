@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class menuPause : MonoBehaviour {
 
@@ -14,7 +15,7 @@ public class menuPause : MonoBehaviour {
         // Update is called once per frame
     void Update () {
 
-        if (GameIsPaused) // si le jeu 
+        if (!GameIsPaused) // si le jeu 
         {
             Resume();
         }
@@ -44,10 +45,27 @@ public class menuPause : MonoBehaviour {
     }
     void Pause()
     {
-        Debug.Log("Appel de Pause()");
+        //Debug.Log("Appel de Pause()");
         MenuPauseUI.SetActive(true);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.Confined;
         Time.timeScale = 0;
+    }
+    public void Quitter()
+    {
+        Debug.Log("ca quitte");
+        Application.Quit();
+    }
+
+    public void Continuer()
+    {
+        TooglePause();
+        Resume();
+    }
+
+    public void Sauvegarder()
+    {
+        DataController d = new DataController();
+        d.SaveGameData(SceneManager.GetActiveScene().name);
     }
 }
