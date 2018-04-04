@@ -181,8 +181,12 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 709200f4f76e3f64a85ca1e1d80ec3b3,
+      objectReference: {fileID: 21300024, guid: 709200f4f76e3f64a85ca1e1d80ec3b3,
         type: 3}
+    - target: {fileID: 1291817525441190, guid: 4bdec39a6602f91459207cefc1b424ee, type: 2}
+      propertyPath: m_Name
+      value: PersonnagePaul
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4bdec39a6602f91459207cefc1b424ee, type: 2}
   m_IsPrefabParent: 0
@@ -444,7 +448,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 30f6fa6a8844bde4e8eae6029582715e,
+      objectReference: {fileID: 21300000, guid: 99bf11d13e5296c4bbeda490365d06d7,
         type: 3}
     - target: {fileID: 4465123571982630, guid: 770596a493ac26948b4b1b250a81494c, type: 2}
       propertyPath: m_LocalScale.x
@@ -503,6 +507,11 @@ Prefab:
         type: 2}
       propertyPath: HPEnemy
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 95978186415302728, guid: 770596a493ac26948b4b1b250a81494c,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 770596a493ac26948b4b1b250a81494c, type: 2}
@@ -727,7 +736,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 93baebe82afb06d43930cec2580b17ad,
+      objectReference: {fileID: 21300024, guid: 93baebe82afb06d43930cec2580b17ad,
         type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4bdec39a6602f91459207cefc1b424ee, type: 2}
@@ -881,6 +890,11 @@ Prefab:
         type: 2}
       propertyPath: HPEnemyMax
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 95978186415302728, guid: 770596a493ac26948b4b1b250a81494c,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 770596a493ac26948b4b1b250a81494c, type: 2}
