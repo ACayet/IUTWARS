@@ -13,6 +13,7 @@ public class CombatJoueur : MonoBehaviour {
     Vector3 PlayerPosition;
     public int PAPlayer;
     public int PAPlayerMax;
+    public string characterName;
 
     // Use this for initialization
     void Start () {
@@ -33,6 +34,7 @@ public class CombatJoueur : MonoBehaviour {
     public void getAttacked(int AttackOfTheEnemy)
     {
         HPPlayer = HPPlayer - (AttackOfTheEnemy - DefensePlayer);
+        Debug.Log(characterName + " a perdu " + (AttackOfTheEnemy - DefensePlayer) + " Points de Vie");
     }
 
     public void setPAPlayertotheMax()

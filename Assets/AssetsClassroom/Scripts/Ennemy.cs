@@ -17,6 +17,7 @@ public class Ennemy : Character
     public int PMEnemy;
     public int PMEnemyMax;
     float speedEnemy = 2.0f;
+    public string enemyName;
 
     // Use this for initialization
     void Start()
@@ -98,6 +99,7 @@ public class Ennemy : Character
     public void getDamaged(int AttackerAttack)
     {
         HPEnemy = HPEnemy - (AttackerAttack - DefenseEnemy);
+        Debug.Log(enemyName + " a perdu " + (AttackerAttack - DefenseEnemy) + " Points de vie");
     }
 
     public Vector3 getPos()
