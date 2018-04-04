@@ -68,7 +68,7 @@ public class Inventory : MonoBehaviour {
         {
             for(int x = 0; x < slotsX; x++)
             {
-                Rect slotRect = new Rect(1400 + x * 60, y * 60, 50, 50);
+                Rect slotRect = new Rect(800 + x * 60, 240 + y * 60, 50, 50);
                 GUI.Box(slotRect, "", skin.GetStyle("Slot"));
                 Item item = inventory[i];
                 
