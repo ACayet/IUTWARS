@@ -86,7 +86,8 @@ public class Ennemy : Character
             Destroy(GetComponent<SpriteRenderer>());
             transform.position = Vector3.MoveTowards(transform.position, EnemyPosition, Time.deltaTime * speedEnemy);
             GameObject.FindGameObjectWithTag("FightManager").GetComponent<TurnManager>().reloadLists();
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            transform.Translate(new Vector3(500.0f, 500.0f, 0.0f));
             
         }
     }

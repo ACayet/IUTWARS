@@ -69,8 +69,9 @@ public class EnemyTurn : MonoBehaviour {
     {
         
         GameObject MyCase = getMyOwnCase();
-
-        if ((GameObject.FindGameObjectWithTag("MapGenerator").GetComponent<FightMapGenerator>().getCase(MyCase.GetComponent<Case>().getCoordX(), MyCase.GetComponent<Case>().getCoordY() - 1) != null) && (GameObject.FindGameObjectWithTag("MapGenerator").GetComponent<FightMapGenerator>().getCase(MyCase.GetComponent<Case>().getCoordX(), MyCase.GetComponent<Case>().getCoordY() - 1).GetComponent<Case>().getReference() == null))
+        if (MyCase != null)
+        {
+            if ((GameObject.FindGameObjectWithTag("MapGenerator").GetComponent<FightMapGenerator>().getCase(MyCase.GetComponent<Case>().getCoordX(), MyCase.GetComponent<Case>().getCoordY() - 1) != null) && (GameObject.FindGameObjectWithTag("MapGenerator").GetComponent<FightMapGenerator>().getCase(MyCase.GetComponent<Case>().getCoordX(), MyCase.GetComponent<Case>().getCoordY() - 1).GetComponent<Case>().getReference() == null))
             {
                 Debug.Log("Walking down : " + debugShit);
                 debugShit++;
@@ -79,8 +80,8 @@ public class EnemyTurn : MonoBehaviour {
                 GetComponent<Ennemy>().reducePM();
                 transform.Translate(Vector3.down);
             }
-        
-        else if ((GameObject.FindGameObjectWithTag("MapGenerator").GetComponent<FightMapGenerator>().getCase(MyCase.GetComponent<Case>().getCoordX() + 1, MyCase.GetComponent<Case>().getCoordY()) != null) && (GameObject.FindGameObjectWithTag("MapGenerator").GetComponent<FightMapGenerator>().getCase(MyCase.GetComponent<Case>().getCoordX() + 1, MyCase.GetComponent<Case>().getCoordY()).GetComponent<Case>().getReference() == null))
+
+            else if ((GameObject.FindGameObjectWithTag("MapGenerator").GetComponent<FightMapGenerator>().getCase(MyCase.GetComponent<Case>().getCoordX() + 1, MyCase.GetComponent<Case>().getCoordY()) != null) && (GameObject.FindGameObjectWithTag("MapGenerator").GetComponent<FightMapGenerator>().getCase(MyCase.GetComponent<Case>().getCoordX() + 1, MyCase.GetComponent<Case>().getCoordY()).GetComponent<Case>().getReference() == null))
             {
                 Debug.Log("Walking right : " + debugShit);
                 debugShit++;
@@ -89,27 +90,27 @@ public class EnemyTurn : MonoBehaviour {
                 GetComponent<Ennemy>().reducePM();
                 transform.Translate(Vector3.right);
             }
-        
-        else if ((GameObject.FindGameObjectWithTag("MapGenerator").GetComponent<FightMapGenerator>().getCase(MyCase.GetComponent<Case>().getCoordX() - 1, MyCase.GetComponent<Case>().getCoordY()) != null) && (GameObject.FindGameObjectWithTag("MapGenerator").GetComponent<FightMapGenerator>().getCase(MyCase.GetComponent<Case>().getCoordX() - 1, MyCase.GetComponent<Case>().getCoordY()).GetComponent<Case>().getReference() == null))
-                {
+
+            else if ((GameObject.FindGameObjectWithTag("MapGenerator").GetComponent<FightMapGenerator>().getCase(MyCase.GetComponent<Case>().getCoordX() - 1, MyCase.GetComponent<Case>().getCoordY()) != null) && (GameObject.FindGameObjectWithTag("MapGenerator").GetComponent<FightMapGenerator>().getCase(MyCase.GetComponent<Case>().getCoordX() - 1, MyCase.GetComponent<Case>().getCoordY()).GetComponent<Case>().getReference() == null))
+            {
                 Debug.Log("Walking left : " + debugShit);
                 debugShit++;
                 GetComponent<Ennemy>().modifPos(Vector3.left);
                 GetComponent<Animator>().Play("WalkingLeft");
                 GetComponent<Ennemy>().reducePM();
                 transform.Translate(Vector3.left);
-                }
-            
-        else if ((GameObject.FindGameObjectWithTag("MapGenerator").GetComponent<FightMapGenerator>().getCase(MyCase.GetComponent<Case>().getCoordX(), MyCase.GetComponent<Case>().getCoordY() - 1) != null) && (GameObject.FindGameObjectWithTag("MapGenerator").GetComponent<FightMapGenerator>().getCase(MyCase.GetComponent<Case>().getCoordX(), MyCase.GetComponent<Case>().getCoordY() + 1).GetComponent<Case>().getReference() == null))
-                {
+            }
+
+            else if ((GameObject.FindGameObjectWithTag("MapGenerator").GetComponent<FightMapGenerator>().getCase(MyCase.GetComponent<Case>().getCoordX(), MyCase.GetComponent<Case>().getCoordY() - 1) != null) && (GameObject.FindGameObjectWithTag("MapGenerator").GetComponent<FightMapGenerator>().getCase(MyCase.GetComponent<Case>().getCoordX(), MyCase.GetComponent<Case>().getCoordY() + 1).GetComponent<Case>().getReference() == null))
+            {
                 Debug.Log("Walking up : " + debugShit);
                 debugShit++;
                 GetComponent<Ennemy>().modifPos(Vector3.up);
                 GetComponent<Animator>().Play("WalkingUp");
                 GetComponent<Ennemy>().reducePM();
                 transform.Translate(Vector3.up);
-                }
-            
+            }
+        }  
         
     }
 

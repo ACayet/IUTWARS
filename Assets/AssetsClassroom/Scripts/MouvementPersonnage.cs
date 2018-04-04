@@ -9,6 +9,12 @@ public class MouvementPersonnage : Character
     float speedPlayer;                         // Speed of movement
     public int PMPlayer;
     public bool isSelected;
+
+    internal void getOutOfScene()
+    {
+        transform.Translate(new Vector3(500.0f, 500.0f, 0.0f));
+    }
+
     public int PMPlayerMax;
     Vector3 lastWalk;
     // Use this for initialization

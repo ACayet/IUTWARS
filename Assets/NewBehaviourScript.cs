@@ -8,8 +8,8 @@ public class NewBehaviourScript : MonoBehaviour {
 	void Start () {
         if(GameObject.FindGameObjectWithTag("PlayerMap") != null)
         {
-            GameObject.FindGameObjectWithTag("PlayerMap").GetComponent<MouvementPersonnage>().getOutOfScene();
-
+            //GameObject.FindGameObjectWithTag("PlayerMap").GetComponent<MouvementPersonnage>().getOutOfScene();
+            GameObject.FindGameObjectWithTag("PlayerMap").SetActive(false);
         }
     }
 	
