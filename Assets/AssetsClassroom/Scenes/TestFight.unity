@@ -236,6 +236,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HPEnemy: 100
+  HPEnemyMax: 0
   AttackEnemy: 0
   DefenseEnemy: 0
   "port\xE9eEnemy": 10
@@ -300,6 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1968b1a5c6b0aec4cb8736460cfc699d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugShit: 0
 --- !u!1 &104599255
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,6 +490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HPPlayer: 0
+  HPPlayerMax: 0
   AttackPlayer: 10
   DefensePlayer: 0
   "port\xE9ePlayer": 2
@@ -1518,6 +1521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HPPlayer: 0
+  HPPlayerMax: 0
   AttackPlayer: 10
   DefensePlayer: 0
   "port\xE9ePlayer": 2
@@ -3183,6 +3187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HPPlayer: 0
+  HPPlayerMax: 0
   AttackPlayer: 10
   DefensePlayer: 0
   "port\xE9ePlayer": 2
@@ -3235,6 +3240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HPEnemy: 100
+  HPEnemyMax: 0
   AttackEnemy: 0
   DefenseEnemy: 0
   "port\xE9eEnemy": 5
@@ -3375,3 +3381,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1968b1a5c6b0aec4cb8736460cfc699d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  debugShit: 0
